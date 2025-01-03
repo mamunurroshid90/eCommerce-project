@@ -10,11 +10,6 @@ import { MdShoppingBasket } from "react-icons/md";
 const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
 
-  // const showSearchBar = () => {
-  //   setShowSearch(!showSearch);
-  //   console.log("click search");
-  // };
-
   return (
     <>
       <div className=" bg-bgColor">
