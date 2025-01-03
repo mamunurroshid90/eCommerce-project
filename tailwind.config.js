@@ -13,9 +13,14 @@ export default {
         lgl: "1024px",
         xl: "1280px",
       },
+      fontFamily: {
+        bodyFont: ["Poppins", "sans-serif"],
+        titleFont: ["Montserrat", "sans-serif"],
+      },
+
       // fontFamily: {
-      //   bodyFont: ["Poppins", "sans-serif"],
-      //   titleFont: ["Montserrat", "sans-serif"],
+      //   bodyFont: ["Work Sans", "serif"],
+      //   titleFont: ["Lora", "serif"],
       // },
 
       colors: {
