@@ -24,12 +24,10 @@ const Banner = ({ data }) => {
         >
           {data.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className=" w-full h-[600px] object-cover bg-center bg-no-repeat bg-cover overflow-hidden">
+              <div className=" w-full h-[300px] xl:h-[600px] object-cover bg-center bg-no-repeat bg-cover overflow-hidden">
                 <img
                   src={item.img}
                   alt="img"
-                  width={100}
-                  height={500}
                   className=" w-full h-full object-cover bg-cover bg-center"
                 />
               </div>

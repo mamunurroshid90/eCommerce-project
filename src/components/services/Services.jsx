@@ -7,7 +7,7 @@ import { LuMessageSquareWarning } from "react-icons/lu";
 const Services = () => {
   return (
     <>
-      <div className=" container max-w-screen-xl mx-auto mt-6 px-3">
+      <div className=" container max-w-screen-xl mx-auto mt-6 xl:mt-12 px-3">
         <div className=" grid grid-cols-2 gap-3 xl:gap-5 md:grid-cols-2 lg:grid-cols-4">
           <div className=" flex items-center gap-3 xl:gap-5 p-3 xl:p-5 rounded-md bg-white shadow-md flex-1">
             <div className=" bg-primaryColor p-3 rounded-full text-white">
