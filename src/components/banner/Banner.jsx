@@ -14,7 +14,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 const Banner = ({ data }) => {
   return (
     <>
-      <div className=" container max-w-screen-xl mx-auto mt-6">
+      <div className=" container max-w-screen-xl mx-auto mt-6 px-3">
         <Swiper
           rewind={true}
           //   navigation={true}
@@ -24,13 +24,13 @@ const Banner = ({ data }) => {
         >
           {data.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className=" w-full h-[600px] flex items-center justify-center">
+              <div className=" w-full h-[600px] object-cover bg-center bg-no-repeat bg-cover overflow-hidden">
                 <img
                   src={item.img}
                   alt="img"
                   width={100}
                   height={500}
-                  className=" w-full h-full object-cover"
+                  className=" w-full h-full object-cover bg-cover bg-center"
                 />
               </div>
             </SwiperSlide>
