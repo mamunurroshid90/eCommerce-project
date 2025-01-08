@@ -73,7 +73,7 @@ const SearchBar = () => {
             </div>
           </div>
           <div className=" hidden lg:block">
-            <button class="bg-gradient-to-r from-blue-700 via-blue-400 to-blue-500 bg-[length:200%_200%] animate-gradient text-white font-bold py-2 px-4 rounded shadow-md hover:shadow-lg transition duration-300">
+            <button className="bg-gradient-to-r from-blue-700 via-blue-400 to-blue-500 bg-[length:200%_200%] animate-gradient text-white font-bold py-2 px-4 rounded shadow-md hover:shadow-lg transition duration-300">
               PC Builder
             </button>
           </div>

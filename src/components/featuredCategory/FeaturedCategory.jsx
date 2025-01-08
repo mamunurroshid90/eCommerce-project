@@ -19,7 +19,7 @@ const FeaturedCategory = () => {
                 className=" flex flex-col items-center justify-center bg-white px-1 py-4 rounded-lg shadow-md hover:shadow-xl transform transition-all duration-200"
               >
                 <div>
-                  <img src={item.image} alt={item.title} className=" h-16" />
+                  <img src={item.image} alt={item.title} className=" h-14" />
                 </div>
                 <div>
                   <h5 className=" font-medium font-titleFont mt-2">
@@ -28,16 +28,6 @@ const FeaturedCategory = () => {
                 </div>
               </div>
             ))}
-            {/* <div className=" flex flex-col items-center justify-center bg-white px-1 py-4 rounded-lg shadow-md hover:shadow-xl transform transition-all duration-200">
-              <div>
-                <GiWaterTank className=" text-3xl text-gray-600" />
-              </div>
-              <div>
-                <h5 className=" font-medium font-titleFont mt-2">
-                  Geyser Water Heater
-                </h5>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
