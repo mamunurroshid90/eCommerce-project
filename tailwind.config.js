@@ -3,6 +3,16 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      content: {
+        dot: '""',
+      },
+      spacing: {
+        "4px": "4px",
+        "9px": "9px",
+      },
+      borderRadius: {
+        "3px": "3px",
+      },
       screens: {
         xs: "320px",
         sm: "375px",
