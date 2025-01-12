@@ -1,25 +1,21 @@
 import React from "react";
+import { categories } from "./categoryLinks";
 
 const Category = () => {
   return (
     <>
       <div className=" hidden lg:block">
-        <div className=" container max-w-screen-xl flex items-center gap-3 mt-2">
-          <button className=" border border-primaryDark py-1 px-4 rounded font-medium font-bodyFont">
-            All
-          </button>
-          <button className=" border border-primaryDark py-1 px-4 rounded font-medium font-bodyFont">
-            Nike
-          </button>
-          <button className=" border border-primaryDark py-1 px-4 rounded font-medium font-bodyFont">
-            Puma
-          </button>
-          <button className=" border border-primaryDark py-1 px-4 rounded font-medium font-bodyFont">
-            adidas
-          </button>
-          <button className=" border border-primaryDark py-1 px-4 rounded font-medium font-bodyFont">
-            Vans
-          </button>
+        <div className=" w-full bg-white ">
+          <div className=" container max-w-screen-xl flex justify-between items-center gap-2  py-4 shadow px-2">
+            {categories.map((category, index) => (
+              <h4
+                key={index}
+                className=" cursor-pointer font-titleFont font-medium text-black hover:text-primaryColor"
+              >
+                {category.name}
+              </h4>
+            ))}
+          </div>
         </div>
       </div>
     </>
