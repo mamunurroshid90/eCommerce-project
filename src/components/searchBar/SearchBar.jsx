@@ -8,10 +8,14 @@ import { FaBars } from "react-icons/fa6";
 import { MdShoppingBasket } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { categories } from "../category/categoryLinks";
+import { HiOutlineMinus } from "react-icons/hi";
+import { AiOutlinePlus } from "react-icons/ai";
 
 const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+  const [heading, setHeading] = useState("");
+  const [subHeading, setSubHeading] = useState("");
 
   return (
     <>
@@ -105,17 +109,53 @@ const SearchBar = () => {
           )}
           {/* responsive menu */}
           <ul
-            className={` flex flex-col gap-4 md:hidden bg-white absolute w-[70%] h-full bottom-0 py-4 pl-4 duration-500 top-[72px] z-30  ${
+            className={` overflow-y-scroll flex flex-col gap-4 md:hidden bg-white absolute w-[70%] h-full bottom-0 py-4 pl-4 duration-500 top-[72px] z-30  ${
               openMenu ? "left-0" : "left-[-100%]"
             }`}
           >
             {categories.map((category, index) => (
-              <li
-                key={index}
-                className=" cursor-pointer font-titleFont font-medium text-black hover:text-primaryColor"
-              >
-                {category.name}
-              </li>
+              <div className=" ">
+                <li
+                  onClick={() =>
+                    heading !== category.name
+                      ? setHeading(category.name)
+                      : setHeading("")
+                  }
+                  key={index}
+                  className=" cursor-pointer font-titleFont font-medium text-black hover:text-primaryColor flex justify-between items-center pr-5 py-2 border-b border-[#ebdede]"
+                >
+                  {category.name}
+                  <span>
+                    {heading === category.name ? (
+                      <HiOutlineMinus />
+                    ) : (
+                      <AiOutlinePlus />
+                    )}
+                  </span>
+                </li>
+                <div
+                  className={` ${
+                    heading !== category.name ? "hidden" : "md:hidden"
+                  }`}
+                >
+                  {/* subLinks */}
+                  {category.subLinks.map((subLink) => (
+                    <div>
+                      <div>
+                        <h3
+                          onClick={() =>
+                            heading === subLink.Head
+                              ? setHeading(subLink.Head)
+                              : setHeading("")
+                          }
+                        >
+                          {subLink.Head}
+                        </h3>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             ))}
           </ul>
         </nav>

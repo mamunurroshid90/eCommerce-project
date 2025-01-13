@@ -61,7 +61,75 @@ export const categories = [
     submenu: true,
     subLinks: [
       {
-        Head: "TopWear",
+        Head: "UnderWear",
+        subLink: [
+          {
+            name: "T-Shirt",
+            link: "/",
+          },
+          {
+            name: "formal-Shirt",
+            link: "/",
+          },
+          {
+            name: "casual-Shirt",
+            link: "/",
+          },
+        ],
+      },
+      {
+        Head: "UnderWear",
+        subLink: [
+          {
+            name: "T-Shirt",
+            link: "/",
+          },
+          {
+            name: "formal-Shirt",
+            link: "/",
+          },
+          {
+            name: "casual-Shirt",
+            link: "/",
+          },
+        ],
+      },
+      {
+        Head: "UnderWear",
+        subLink: [
+          {
+            name: "T-Shirt",
+            link: "/",
+          },
+          {
+            name: "formal-Shirt",
+            link: "/",
+          },
+          {
+            name: "casual-Shirt",
+            link: "/",
+          },
+        ],
+      },
+      {
+        Head: "UnderWear",
+        subLink: [
+          {
+            name: "T-Shirt",
+            link: "/",
+          },
+          {
+            name: "formal-Shirt",
+            link: "/",
+          },
+          {
+            name: "casual-Shirt",
+            link: "/",
+          },
+        ],
+      },
+      {
+        Head: "UnderWear",
         subLink: [
           {
             name: "T-Shirt",
