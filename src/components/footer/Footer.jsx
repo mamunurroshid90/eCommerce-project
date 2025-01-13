@@ -14,100 +14,96 @@ const Footer = () => {
       <footer>
         <div className=" bg-bgColor">
           <div className=" container max-w-screen-xl mx-auto py-10 px-3 ">
-            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center">
+            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 justify-items-center">
               <div className=" flex flex-col gap-5">
-                <h3 className=" text-base text-center text-white tracking-[0.2em] uppercase font-medium font-titleFont">
+                <h3 className=" text-base text-start text-white tracking-[0.2em] uppercase font-medium font-titleFont">
                   Support
                 </h3>
-                <a
-                  href="#"
-                  className=" border border-[#838383] py-3 px-5 rounded-full w-[300px] flex items-center gap-5"
-                >
-                  <div className=" border-r-[1px] border-[#838383] pr-4">
-                    <FaPhone className=" text-2xl text-white" />
-                  </div>
-                  <div>
-                    <p className=" text-xs text-[#838383] font-bodyFont">
-                      9AM - 8PM
-                    </p>
-                    <h5 className=" text-xl text-primaryColor font-bold">
-                      16793
-                    </h5>
-                  </div>
-                </a>
-                <a
-                  href="#"
-                  className=" border border-[#838383] py-3 px-5 rounded-full w-[300px] flex items-center gap-5"
-                >
-                  <div className=" border-r-[1px] border-[#838383] pr-4">
-                    <FaLocationDot className=" text-2xl text-white" />
-                  </div>
-                  <div>
-                    <p className=" text-xs text-[#838383] font-bodyFont">
-                      Store Locator
-                    </p>
-                    <h5 className=" text-xl text-primaryColor font-bold">
-                      Find Our Store
-                    </h5>
-                  </div>
-                </a>
+                <div className=" mt-5">
+                  <a
+                    href="#"
+                    className=" border border-[#2f2f2f] py-3 px-5 rounded-full w-[300px] flex items-center gap-5"
+                  >
+                    <div className=" border-r-[1px] border-[#2f2f2f] pr-4">
+                      <FaPhone className=" text-2xl text-white" />
+                    </div>
+                    <div>
+                      <p className=" text-xs text-[#838383] font-bodyFont">
+                        9AM - 8PM
+                      </p>
+                      <h5 className=" text-xl text-primaryColor font-bold">
+                        16793
+                      </h5>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    className=" border border-[#2f2f2f] py-3 px-5 rounded-full w-[300px] flex items-center gap-5"
+                  >
+                    <div className=" border-r-[1px] border-[#2f2f2f] pr-4">
+                      <FaLocationDot className=" text-2xl text-white" />
+                    </div>
+                    <div>
+                      <p className=" text-xs text-[#838383] font-bodyFont">
+                        Store Locator
+                      </p>
+                      <h5 className=" text-xl text-primaryColor font-bold">
+                        Find Our Store
+                      </h5>
+                    </div>
+                  </a>
+                </div>
               </div>
-              <div className="">
-                <h3 className=" text-base text-center text-white tracking-[0.2em] uppercase font-medium font-titleFont">
+              <div className=" lg:col-span-2">
+                <h3 className=" text-base text-start text-white tracking-[0.2em] uppercase font-medium font-titleFont">
                   About Us
                 </h3>
-                <ul className=" text-[#838383] font-bodyFont text-center mt-4 text-sm md:grid md:grid-cols-2 md:gap-y-2">
-                  <div>
-                    <li className=" relative inline-block mr-4 hover:text-primaryColor hover:underline after:content-dot after:inline-block after:w-4px after:h-4px after:rounded-3px after:bg-[#838383] after:absolute after:-right-2 after:top-9px">
-                      <a href="#">Affiliate Program</a>
-                    </li>
-                    <li className=" relative inline-block mr-4 hover:text-primaryColor hover:underline after:content-dot after:inline-block after:w-4px after:h-4px after:rounded-3px after:bg-[#838383] after:absolute after:-right-2 after:top-9px">
-                      <a href="#">EMI Terms</a>
-                    </li>
-                    <li className=" relative inline-block mr-4 hover:text-primaryColor hover:underline after:content-dot after:inline-block after:w-4px after:h-4px after:rounded-3px after:bg-[#838383] after:absolute after:-right-2 after:top-9px">
-                      <a href="#">Privacy Policy</a>
-                    </li>
-                    <li className=" relative inline-block mr-4 hover:text-primaryColor hover:underline after:content-dot after:inline-block after:w-4px after:h-4px after:rounded-3px after:bg-[#838383] after:absolute after:-right-2 after:top-9px">
-                      <a href="#">Star Point Policy</a>
-                    </li>
-                  </div>
-                  <div>
-                    <li className=" relative inline-block mr-4 hover:text-primaryColor hover:underline after:content-dot after:inline-block after:w-4px after:h-4px after:rounded-3px after:bg-[#838383] after:absolute after:-right-2 after:top-9px">
-                      <a href="#">Contact Us</a>
-                    </li>
-                    <li className=" relative inline-block mr-4 hover:text-primaryColor hover:underline after:content-dot after:inline-block after:w-4px after:h-4px after:rounded-3px after:bg-[#838383] after:absolute after:-right-2 after:top-9px">
-                      <a href="#">Career</a>
-                    </li>
-                    <li className=" relative inline-block mr-4 hover:text-primaryColor hover:underline after:content-dot after:inline-block after:w-4px after:h-4px after:rounded-3px after:bg-[#838383] after:absolute after:-right-2 after:top-9px">
-                      <a href="#">Terms and Conditions</a>
-                    </li>
-                    <li className=" relative inline-block mr-4 hover:text-primaryColor hover:underline after:content-dot after:inline-block after:w-4px after:h-4px after:rounded-3px after:bg-[#838383] after:absolute after:-right-2 after:top-9px">
-                      <a href="#">Brands</a>
-                    </li>
-                  </div>
-                  <div>
-                    <li className=" relative inline-block mr-4 hover:text-primaryColor hover:underline after:content-dot after:inline-block after:w-4px after:h-4px after:rounded-3px after:bg-[#838383] after:absolute after:-right-2 after:top-9px">
-                      <a href="#">Blog</a>
-                    </li>
-                    <li className=" relative inline-block mr-4 hover:text-primaryColor hover:underline after:content-dot after:inline-block after:w-4px after:h-4px after:rounded-3px after:bg-[#838383] after:absolute after:-right-2 after:top-9px">
-                      <a href="#">Refund and Return Policy</a>
-                    </li>
-                    <li className=" relative inline-block mr-4 hover:text-primaryColor hover:underline after:content-dot after:inline-block after:w-4px after:h-4px after:rounded-3px after:bg-[#838383] after:absolute after:-right-2 after:top-9px">
-                      <a href="#">Online Delivery</a>
-                    </li>
-                    <li className=" relative inline-block mr-4 hover:text-primaryColor hover:underline after:content-dot after:inline-block after:w-4px after:h-4px after:rounded-3px after:bg-[#838383] after:absolute after:-right-2 after:top-9px">
-                      <a href="#">About Us</a>
-                    </li>
-                  </div>
+                <ul className=" text-[#838383] font-bodyFont text-center mt-5 text-sm md:grid md:grid-cols-3 justify-items-start lg:gap-5">
+                  <li className=" hover:underline hover:text-primaryColor font-bodyFont">
+                    <a href="#">Affiliate Program</a>
+                  </li>
+                  <li className=" hover:underline hover:text-primaryColor font-bodyFont">
+                    <a href="#">EMI Terms</a>
+                  </li>
+                  <li className=" hover:underline hover:text-primaryColor font-bodyFont">
+                    <a href="#">Privacy Policy</a>
+                  </li>
+                  <li className=" hover:underline hover:text-primaryColor font-bodyFont">
+                    <a href="#">Star Point Policy</a>
+                  </li>
+                  <li className=" hover:underline hover:text-primaryColor font-bodyFont">
+                    <a href="#">Contact Us</a>
+                  </li>
+                  <li className=" hover:underline hover:text-primaryColor font-bodyFont">
+                    <a href="#">Career</a>
+                  </li>
+                  <li className=" hover:underline hover:text-primaryColor font-bodyFont">
+                    <a href="#">Terms and Conditions</a>
+                  </li>
+                  <li className=" hover:underline hover:text-primaryColor font-bodyFont">
+                    <a href="#">Brands</a>
+                  </li>
+                  <li className=" hover:underline hover:text-primaryColor font-bodyFont">
+                    <a href="#">Blog</a>
+                  </li>
+                  <li className=" hover:underline hover:text-primaryColor font-bodyFont">
+                    <a href="#">Refund and Return Policy</a>
+                  </li>
+                  <li className=" hover:underline hover:text-primaryColor font-bodyFont">
+                    <a href="#">Online Delivery</a>
+                  </li>
+                  <li className=" hover:underline hover:text-primaryColor font-bodyFont">
+                    <a href="#">About Us</a>
+                  </li>
                 </ul>
               </div>
-              <div>
-                <h3 className=" text-base text-center text-white tracking-[0.2em] uppercase font-medium font-titleFont">
+              <div className="">
+                <h3 className=" text-base text-start text-white tracking-[0.2em] uppercase font-medium font-titleFont">
                   Stay Connected
                 </h3>
-                <div className=" flex flex-col items-center gap-3 mt-4 font-bodyFont">
+                <div className=" flex flex-col items-start gap-3 mt-5 font-bodyFont">
                   <h5 className=" text-white">Star Tech Ltd</h5>
-                  <p className=" text-[#838383] text-center text-sm">
+                  <p className=" text-[#838383] text-start text-sm">
                     Head Office: 28 Kazi Nazrul Islam Ave,Navana Zohura Square,
                     Dhaka 1000
                   </p>

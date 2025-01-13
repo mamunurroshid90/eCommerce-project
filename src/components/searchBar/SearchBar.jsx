@@ -15,7 +15,7 @@ const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const [heading, setHeading] = useState("");
-  const [subHeading, setSubHeading] = useState("");
+  // const [subHeading, setSubHeading] = useState("");
 
   return (
     <>
