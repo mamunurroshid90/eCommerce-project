@@ -20,6 +20,40 @@ export const categories = [
           },
         ],
       },
+      {
+        Head: "TopWear",
+        subLink: [
+          {
+            name: "T-Shirt",
+            link: "/",
+          },
+          {
+            name: "formal-Shirt",
+            link: "/",
+          },
+          {
+            name: "casual-Shirt",
+            link: "/",
+          },
+        ],
+      },
+      {
+        Head: "TopWear",
+        subLink: [
+          {
+            name: "T-Shirt",
+            link: "/",
+          },
+          {
+            name: "formal-Shirt",
+            link: "/",
+          },
+          {
+            name: "casual-Shirt",
+            link: "/",
+          },
+        ],
+      },
     ],
   },
   {

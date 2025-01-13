@@ -6,29 +6,42 @@ import { MdFlashOn } from "react-icons/md";
 import { MdAccountBox } from "react-icons/md";
 import { FaBars } from "react-icons/fa6";
 import { MdShoppingBasket } from "react-icons/md";
+import { RxCross2 } from "react-icons/rx";
+import { categories } from "../category/categoryLinks";
 
 const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <>
       <div className=" bg-bgColor">
-        <nav className="  max-w-screen-xl mx-auto py-4 sm:px-3 flex items-center justify-between font-bodyFont">
+        <nav className="  max-w-screen-xl mx-auto lg:flex lg:justify-between md:items-center">
           {/* responsive side */}
-          <div className=" block lg:hidden text-white">
-            <FaBars className=" text-white text-2xl" />
-          </div>
-          <div className=" w-[120px] h-[40px] lg:w-[150px] lg:h-[50px] flex justify-center items-center">
-            <img src={Logo} alt="logo.png" className=" w-full h-full" />
-          </div>
-          <div className=" flex items-center gap-5 text-white lg:hidden">
-            <div onClick={() => setShowSearch(!showSearch)}>
-              <IoSearch className=" text-2xl text-white" />
+          <div className=" z-50 py-4 sm:px-3 flex items-center justify-between font-bodyFont p-5 md:w-auto w-full ">
+            <div
+              onClick={() => setOpenMenu(!openMenu)}
+              className=" block lg:hidden text-white cursor-pointer "
+            >
+              {openMenu ? (
+                <RxCross2 className=" text-white text-2xl hover:bg-slate-700 rounded-full w-7 h-7 transition-all duration-500" />
+              ) : (
+                <FaBars className=" text-white text-2xl transition-all duration-500" />
+              )}
             </div>
-            <div>
-              <MdShoppingBasket className=" text-2xl text-white" />
+            <div className=" w-[120px] h-[40px] lg:w-[150px] lg:h-[50px] flex justify-center items-center">
+              <img src={Logo} alt="logo.png" className=" w-full h-full" />
+            </div>
+            <div className=" flex items-center gap-5 text-white lg:hidden">
+              <div onClick={() => setShowSearch(!showSearch)}>
+                <IoSearch className=" text-2xl text-white" />
+              </div>
+              <div>
+                <MdShoppingBasket className=" text-2xl text-white" />
+              </div>
             </div>
           </div>
+
           {/* no responsive side */}
           <div className=" hidden lg:block relative">
             <input
@@ -90,6 +103,21 @@ const SearchBar = () => {
               </div>
             </div>
           )}
+          {/* responsive menu */}
+          <ul
+            className={` flex flex-col gap-4 md:hidden bg-white absolute w-[70%] h-full bottom-0 py-4 pl-4 duration-500 top-[72px] z-30  ${
+              openMenu ? "left-0" : "left-[-100%]"
+            }`}
+          >
+            {categories.map((category, index) => (
+              <li
+                key={index}
+                className=" cursor-pointer font-titleFont font-medium text-black hover:text-primaryColor"
+              >
+                {category.name}
+              </li>
+            ))}
+          </ul>
         </nav>
       </div>
     </>
