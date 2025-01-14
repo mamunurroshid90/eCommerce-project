@@ -16,13 +16,13 @@ const Footer = () => {
           <div className=" container max-w-screen-xl mx-auto py-10 px-3 ">
             <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 justify-items-center">
               <div className=" flex flex-col gap-5">
-                <h3 className=" text-base text-start text-white tracking-[0.2em] uppercase font-medium font-titleFont">
+                <h3 className=" text-base text-center lg:text-start  text-white tracking-[0.2em] uppercase font-medium font-titleFont">
                   Support
                 </h3>
-                <div className=" mt-5">
+                <div className="  lg:mt-5 ">
                   <a
                     href="#"
-                    className=" border border-[#2f2f2f] py-3 px-5 rounded-full w-[300px] flex items-center gap-5"
+                    className=" border border-[#2f2f2f] py-3 px-5 rounded-full w-[300px] flex items-center gap-5 mb-4"
                   >
                     <div className=" border-r-[1px] border-[#2f2f2f] pr-4">
                       <FaPhone className=" text-2xl text-white" />
@@ -55,10 +55,10 @@ const Footer = () => {
                 </div>
               </div>
               <div className=" lg:col-span-2">
-                <h3 className=" text-base text-start text-white tracking-[0.2em] uppercase font-medium font-titleFont">
+                <h3 className=" text-base text-center lg:text-start text-white tracking-[0.2em] uppercase font-medium font-titleFont">
                   About Us
                 </h3>
-                <ul className=" text-[#838383] font-bodyFont text-center mt-5 text-sm md:grid md:grid-cols-3 justify-items-start lg:gap-5">
+                <ul className=" text-[#838383] font-bodyFont text-center mt-5 text-sm lg:grid lg:grid-cols-3 lg:justify-items-start lg:gap-5 gap-5">
                   <li className=" hover:underline hover:text-primaryColor font-bodyFont">
                     <a href="#">Affiliate Program</a>
                   </li>
@@ -98,12 +98,12 @@ const Footer = () => {
                 </ul>
               </div>
               <div className="">
-                <h3 className=" text-base text-start text-white tracking-[0.2em] uppercase font-medium font-titleFont">
+                <h3 className=" text-base text-center lg:text-start text-white tracking-[0.2em] uppercase font-medium font-titleFont">
                   Stay Connected
                 </h3>
-                <div className=" flex flex-col items-start gap-3 mt-5 font-bodyFont">
+                <div className=" flex flex-col items-center lg:items-start gap-3 mt-5 font-bodyFont">
                   <h5 className=" text-white">Star Tech Ltd</h5>
-                  <p className=" text-[#838383] text-start text-sm">
+                  <p className=" text-[#838383] text-center lg:text-start text-sm">
                     Head Office: 28 Kazi Nazrul Islam Ave,Navana Zohura Square,
                     Dhaka 1000
                   </p>
