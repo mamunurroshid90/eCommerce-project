@@ -14,15 +14,15 @@ const FeaturedProductsCart = ({
   return (
     <>
       <div>
-        <div className=" bg-white lg:h-[300px] h-[250px] lg:p-5 p-3 rounded-md shadow ">
-          <div className=" lg:h-[180px] h-[100px]">
-            <img src={img} alt="image" className=" w-full lg:h-[70%] h-[55%]" />
+        <div className=" bg-white md:h-[300px] h-[250px] lg:p-5 p-3 rounded-md shadow ">
+          <div className=" max-w-full h-auto aspect-square object-cover flex justify-center items-center overflow-hidden">
+            <img src={img} width={180} height={100} alt="image" className=" " />
           </div>
           <div className=" relative">
             <h2 className=" text-md font-semibold font-bodyFont tracking-wide">
               {title}
             </h2>
-            <div className=" absolute -bottom-14 flex items-center gap-4">
+            <div className=" absolute -bottom-12 flex items-center gap-4">
               <span className=" text-lg font-bold font-bodyFont text-primaryColor">
                 {newPrice}
               </span>

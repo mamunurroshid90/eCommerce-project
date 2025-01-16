@@ -5,7 +5,7 @@ import { IoMdSearch } from "react-icons/io";
 const FindStore = () => {
   return (
     <>
-      <div className=" pb-10 px-3">
+      <div className=" pb-10 px-container-padding">
         <div className="container rounded-md max-w-screen-xl bg-gradient-to-r from-blue-500 via-blue-700 to-blue-900">
           <div className=" py-8 pl-7 pr-5 flex flex-col gap-5 items-center md:flex md:justify-between md:items-center md:flex-row">
             <div className=" md:flex-row md:items-center md:gap-5 flex flex-col items-center gap-2 text-white">

@@ -4,9 +4,9 @@ import { CategoryData } from "../../db/categoryData.js";
 const FeaturedCategory = () => {
   return (
     <>
-      <div className=" container max-w-screen-xl mx-auto mt-16 pb-20 px-3">
+      <div className=" container max-w-screen-xl mx-auto mt-16 pb-20 p-container-padding">
         <div>
-          <h2 className=" text-2xl text-center font-bold font-titleFont">
+          <h2 className=" text-section-heading text-center font-bold font-titleFont">
             Featured Category
           </h2>
           <p className=" font-bodyFont font-medium text-center mt-2">

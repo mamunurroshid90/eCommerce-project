@@ -3,9 +3,6 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      content: {
-        dot: '""',
-      },
       spacing: {
         "4px": "4px",
         "9px": "9px",
@@ -26,6 +23,13 @@ export default {
       fontFamily: {
         bodyFont: ["Poppins", "sans-serif"],
         titleFont: ["Montserrat", "sans-serif"],
+      },
+      fontSize: {
+        "section-heading": "clamp(1rem, calc(2vw + 1rem), 2rem)",
+      },
+
+      padding: {
+        "container-padding": "min(1em, 4%)",
       },
 
       // fontFamily: {
