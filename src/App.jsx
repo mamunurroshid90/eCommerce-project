@@ -1,3 +1,4 @@
+import Login from "./components/auth/login/Login.jsx";
 import Registration from "./components/auth/registration/Registration.jsx";
 import Banner from "./components/banner/Banner";
 import Category from "./components/category/Category";
@@ -17,7 +18,8 @@ function App() {
       <div className="">
         <SearchBar />
         <Category />
-        <Registration />
+        {/* <Registration /> */}
+        <Login />
         {/* <Banner data={Data} />
         <Services />
         <MarqueeComp />

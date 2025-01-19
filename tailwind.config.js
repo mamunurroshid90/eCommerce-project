@@ -24,6 +24,7 @@ export default {
         bodyFont: ["Poppins", "sans-serif"],
         titleFont: ["Montserrat", "sans-serif"],
       },
+
       fontSize: {
         "section-heading": "clamp(1rem, calc(2vw + 1rem), 2rem)",
         "sub-heading": "clamp(1rem, calc(2vw + 1rem), 1.5rem)",
@@ -61,6 +62,9 @@ export default {
 
       container: {
         center: true,
+      },
+      maxWidth: {
+        formContainer: ["max-w-[450px]"],
       },
     },
   },
