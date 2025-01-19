@@ -26,6 +26,7 @@ export default {
       },
       fontSize: {
         "section-heading": "clamp(1rem, calc(2vw + 1rem), 2rem)",
+        "sub-heading": "clamp(1rem, calc(2vw + 1rem), 1.5rem)",
         "cart-title": "clamp(0.8rem, calc(1.5vw + 0.5rem), 0.9rem)",
       },
 

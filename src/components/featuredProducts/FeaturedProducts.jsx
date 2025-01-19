@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import FeaturedProductsCart from "./FeaturedProductsCart";
+import ReactPaginate from "react-paginate";
 
 const FeaturedProducts = ({ data }) => {
-  console.log(data);
+  const itemsPerPage = 20;
+  const [currentItems, setCurrentItems] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
+
+  React.useEffect(() => {
+    const endOffset = itemOffset + itemsPerPage;
+    setCurrentItems(data.slice(itemOffset, endOffset)); // Get items for the current page
+    setPageCount(Math.ceil(data.length / itemsPerPage)); // Calculate total pages
+  }, [itemOffset, itemsPerPage, data]);
+
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % data.length;
+    setItemOffset(newOffset);
+  };
+
   return (
     <>
       <div className=" container max-w-screen-xl mx-auto lg:pt-7">
@@ -13,7 +29,7 @@ const FeaturedProducts = ({ data }) => {
           Check & Get Your Desired Product!
         </h5>
         <div className=" px-container-padding grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 pb-10 pt-7">
-          {data.map(
+          {currentItems.map(
             ({
               img,
               title,
@@ -40,6 +56,23 @@ const FeaturedProducts = ({ data }) => {
             )
           )}
         </div>
+        {/* Pagination */}
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel="Next >"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={3}
+          pageCount={pageCount}
+          previousLabel="< Previous"
+          renderOnZeroPageCount={null}
+          containerClassName="flex flex-wrap justify-center items-center mt-8 space-x-2 space-y-4 sm:space-y-0 mb-10"
+          pageClassName="block"
+          pageLinkClassName="px-4 py-2 border border-gray-300 rounded-md text-gray-600 hover:bg-blue-500 hover:text-white transition-colors"
+          activeLinkClassName="bg-blue-500 text-white border-blue-500"
+          previousLinkClassName="px-4 py-2 border border-gray-300 rounded-md text-gray-600 hover:bg-blue-500 hover:text-white transition-colors"
+          nextLinkClassName="px-4 py-2 border border-gray-300 rounded-md text-gray-600 hover:bg-blue-500 hover:text-white transition-colors"
+          breakLinkClassName="px-4 py-2 text-gray-600"
+        />
       </div>
     </>
   );
