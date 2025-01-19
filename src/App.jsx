@@ -1,3 +1,4 @@
+import Registration from "./components/auth/registration/Registration.jsx";
 import Banner from "./components/banner/Banner";
 import Category from "./components/category/Category";
 import FeaturedCategory from "./components/featuredCategory/FeaturedCategory.jsx";
@@ -16,13 +17,14 @@ function App() {
       <div className="">
         <SearchBar />
         <Category />
-        <Banner data={Data} />
+        <Registration />
+        {/* <Banner data={Data} />
         <Services />
         <MarqueeComp />
         <FeaturedCategory />
         <FindStore />
         <FeaturedProducts data={Data} />
-        <WeAreBest />
+        <WeAreBest /> */}
         <Footer />
       </div>
     </>
