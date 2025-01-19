@@ -63,14 +63,14 @@ const FeaturedProducts = ({ data }) => {
           onPageChange={handlePageClick}
           pageRangeDisplayed={3}
           pageCount={pageCount}
-          previousLabel="< Previous"
+          previousLabel="< Prev"
           renderOnZeroPageCount={null}
-          containerClassName="flex flex-wrap justify-center items-center mt-8 space-x-2 space-y-4 sm:space-y-0 mb-10"
+          containerClassName="flex flex-wrap justify-center items-center mt-8 space-x-2 space-y-2 sm:space-y-0 mb-8"
           pageClassName="block"
-          pageLinkClassName="px-4 py-2 border border-gray-300 rounded-md text-gray-600 hover:bg-blue-500 hover:text-white transition-colors"
+          pageLinkClassName="px-3 py-1 border border-gray-300 rounded-md text-gray-600 hover:bg-blue-500 hover:text-white transition-colors"
           activeLinkClassName="bg-blue-500 text-white border-blue-500"
-          previousLinkClassName="px-4 py-2 border border-gray-300 rounded-md text-gray-600 hover:bg-blue-500 hover:text-white transition-colors"
-          nextLinkClassName="px-4 py-2 border border-gray-300 rounded-md text-gray-600 hover:bg-blue-500 hover:text-white transition-colors"
+          previousLinkClassName="px-2 py-1 text-xs border border-gray-300 rounded-md text-gray-600 hover:bg-blue-500 hover:text-white transition-colors"
+          nextLinkClassName="px-2 py-1 border text-xs border-gray-300 rounded-md text-gray-600 hover:bg-blue-500 hover:text-white transition-colors"
           breakLinkClassName="px-4 py-2 text-gray-600"
         />
       </div>
