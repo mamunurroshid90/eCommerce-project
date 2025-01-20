@@ -10,6 +10,7 @@ import { RxCross2 } from "react-icons/rx";
 import { categories } from "../category/categoryLinks";
 import { HiOutlineMinus } from "react-icons/hi";
 import { AiOutlinePlus } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
@@ -34,7 +35,9 @@ const SearchBar = () => {
               )}
             </div>
             <div className=" w-[120px] h-[40px] lg:w-[150px] lg:h-[50px] flex justify-center items-center">
-              <img src={Logo} alt="logo.png" className=" w-full h-full" />
+              <Link to="/">
+                <img src={Logo} alt="logo.png" className=" w-full h-full" />
+              </Link>
             </div>
             <div className=" flex items-center gap-5 text-white lg:hidden">
               <div onClick={() => setShowSearch(!showSearch)}>

@@ -1,6 +1,7 @@
 import React from "react";
 import { categories } from "./categoryLinks";
 import { MdOutlineArrowRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Category = () => {
   return (
@@ -14,7 +15,7 @@ const Category = () => {
                   key={index}
                   className=" cursor-pointer font-titleFont font-medium text-black hover:text-primaryColor"
                 >
-                  {category.name}
+                  <Link to="/products">{category.name}</Link>
                 </h4>
                 {category.submenu && (
                   <div>
