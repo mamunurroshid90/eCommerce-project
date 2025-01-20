@@ -21,7 +21,7 @@ const FeaturedProducts = ({ data }) => {
 
   return (
     <>
-      <div className=" container max-w-screen-xl mx-auto lg:pt-7">
+      <div>
         <h1 className=" text-center text-section-heading font-bold font-titleFont">
           Featured Products
         </h1>
