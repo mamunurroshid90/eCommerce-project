@@ -63,9 +63,6 @@ export default {
       container: {
         center: true,
       },
-      maxWidth: {
-        formContainer: ["max-w-[450px]"],
-      },
     },
   },
   plugins: [],
