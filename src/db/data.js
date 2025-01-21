@@ -1,5 +1,6 @@
 const data = [
   {
+    id: 1,
     img: "https://i.postimg.cc/C1X9Q6BY/pngwing-com-85.png",
     title: "Nike Air Vapormax Plus Nike Air Vapormax Plus ",
     star: 4,
@@ -12,6 +13,7 @@ const data = [
   },
 
   {
+    id: 2,
     img: "https://i.postimg.cc/8zN99v5F/pngwing-com-84.png",
     title: "Nike Waffle One Sneaker",
     star: 4,
@@ -23,6 +25,7 @@ const data = [
     category: "sneakers",
   },
   {
+    id: 3,
     img: "https://i.postimg.cc/mr6nP6SM/pngwing-com-83.png",
     title: "Nike Running Shoe",
     star: 4,
@@ -34,6 +37,7 @@ const data = [
     category: "sneakers",
   },
   {
+    id: 4,
     img: "https://i.postimg.cc/HxchX4SN/pngwing-com-82.png",
     title: "Flat Slip On Pumps",
     star: 4,
@@ -45,6 +49,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 5,
     img: "https://i.postimg.cc/xCwFRJh1/pngwing-com-81.png",
     title: "Knit Ballet Flat",
     star: 4,
@@ -57,6 +62,7 @@ const data = [
   },
 
   {
+    id: 6,
     img: "https://i.postimg.cc/YqwsLFQX/pngwing-com-80.png",
     title: "Loafer Flats",
     star: 4,
@@ -69,6 +75,7 @@ const data = [
   },
 
   {
+    id: 7,
     img: "https://i.postimg.cc/Nf7P604Q/pngwing-com-79.png",
     title: "Nike Zoom Freak",
     star: 4,
@@ -81,6 +88,7 @@ const data = [
   },
 
   {
+    id: 8,
     img: "https://i.postimg.cc/bwyV3jCk/pngwing-com-78.png",
     title: "Nike Men's Sneaker",
     star: 4,
@@ -93,6 +101,7 @@ const data = [
   },
 
   {
+    id: 9,
     img: "https://i.postimg.cc/JhgTrH15/pngwing-com-77.png",
     title: "PUMA BLACK-OCE",
     star: 4,
@@ -104,6 +113,7 @@ const data = [
     category: "sneakers",
   },
   {
+    id: 10,
     img: "https://i.postimg.cc/dVVnGj39/pngwing-com-76.png",
     title: "Pacer Future Sneaker",
     star: 4,
@@ -115,6 +125,7 @@ const data = [
     category: "sneakers",
   },
   {
+    id: 11,
     img: "https://i.postimg.cc/YS43s21G/pngwing-com-75.png",
     title: "Unisex-Adult Super",
     star: 4,
@@ -126,6 +137,7 @@ const data = [
     category: "sneakers",
   },
   {
+    id: 12,
     img: "https://i.postimg.cc/ZnmxnrXp/pngwing-com-74.png",
     title: "Roma Basic Sneaker",
     star: 4,
@@ -137,6 +149,7 @@ const data = [
     category: "sneakers",
   },
   {
+    id: 13,
     img: "https://i.postimg.cc/L6N34gDg/pngwing-com-73.png",
     title: "Pacer Future Doubleknit",
     star: 4,
@@ -149,6 +162,7 @@ const data = [
   },
 
   {
+    id: 14,
     img: "https://i.postimg.cc/KvqthScn/pngwing-com-72.png",
     title: "Fusion Evo Golf Shoe",
     star: 4,
@@ -160,6 +174,7 @@ const data = [
     category: "sneakers",
   },
   {
+    id: 15,
     img: "https://i.postimg.cc/1tQqryMZ/pngwing-com-71.png",
     title: "Rainbow Chex Skate",
     star: 4,
@@ -171,6 +186,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 16,
     img: "https://i.postimg.cc/qR4NCjMJ/pngwing-com-70.png",
     title: "Low-Top Trainers",
     star: 4,
@@ -182,6 +198,7 @@ const data = [
     category: "sandals",
   },
   {
+    id: 17,
     img: "https://i.postimg.cc/ZnDn2mPn/pngwing-com-69.png",
     title: "Vans Unisex Low-Top",
     star: 4,
@@ -193,6 +210,7 @@ const data = [
     category: "sandals",
   },
   {
+    id: 18,
     img: "https://i.postimg.cc/tCYYP1yx/pngwing-com-68.png",
     title: "Classic Bandana Sneakers",
     star: 4,
@@ -204,6 +222,7 @@ const data = [
     category: "sandals",
   },
   {
+    id: 19,
     img: "https://i.postimg.cc/k5F49KNk/pngwing-com-67.png",
     title: "Chunky High Heel",
     star: 4,
@@ -215,6 +234,7 @@ const data = [
     category: "heels",
   },
   {
+    id: 20,
     img: "https://i.postimg.cc/qR1v6r5w/pngwing-com-66.png",
     title: "Slip On Stiletto High Heel",
     star: 4,
@@ -226,6 +246,7 @@ const data = [
     category: "heels",
   },
   {
+    id: 21,
     img: "https://i.postimg.cc/cC64QjqS/pngwing-com-65.png",
     title: "DREAM PAIRS Court Shoes",
     star: 4,
@@ -237,6 +258,7 @@ const data = [
     category: "heels",
   },
   {
+    id: 22,
     img: "https://i.postimg.cc/X7GYqTcK/pngwing-com-64.png",
     title: "Nike Air Vapormax Plus",
     star: 4,
@@ -249,6 +271,7 @@ const data = [
   },
 
   {
+    id: 23,
     img: "https://i.postimg.cc/xjFd00HT/pngwing-com-63.png",
     title: "Low Mid Block Heels",
     star: 4,
@@ -260,6 +283,7 @@ const data = [
     category: "heels",
   },
   {
+    id: 24,
     img: "https://i.postimg.cc/hvw4Mrg7/pngwing-com-62.png",
     title: "Chunky High Heel",
     star: 4,
@@ -271,6 +295,7 @@ const data = [
     category: "heels",
   },
   {
+    id: 25,
     img: "https://i.postimg.cc/bN7Nt337/pngwing-com-61.png",
     title: "Amore Fashion Stilettos",
     star: 4,
@@ -282,6 +307,7 @@ const data = [
     category: "heels",
   },
   {
+    id: 26,
     img: "https://i.postimg.cc/zXK3psbz/pngwing-com-60.png",
     title: "Bridal Sandals Glitter",
     star: 4,
@@ -293,6 +319,7 @@ const data = [
     category: "heels",
   },
   {
+    id: 27,
     img: "https://i.postimg.cc/3wSwd76B/pngwing-com-59.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -304,6 +331,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 28,
     img: "https://i.postimg.cc/V6JktpPc/pngwing-com-58.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -315,6 +343,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 29,
     img: "https://i.postimg.cc/jjd5xC82/pngwing-com-57.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -326,6 +355,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 30,
     img: "https://i.postimg.cc/Dwc031PR/pngwing-com-56.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -337,6 +367,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 31,
     img: "https://i.postimg.cc/vBCHthGx/pngwing-com-55.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -348,6 +379,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 32,
     img: "https://i.postimg.cc/KjLcqTYq/pngwing-com-54.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -359,6 +391,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 33,
     img: "https://i.postimg.cc/P5KXRTtj/pngwing-com-53.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -370,6 +403,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 34,
     img: "https://i.postimg.cc/3JXJ22VW/pngwing-com-52.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -381,6 +415,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 35,
     img: "https://i.postimg.cc/SQzKNBG6/pngwing-com-51.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -392,6 +427,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 36,
     img: "https://i.postimg.cc/VLQkSK73/pngwing-com-50.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -403,6 +439,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 37,
     img: "https://i.postimg.cc/9QcXbrHb/pngwing-com-49.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -414,6 +451,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 38,
     img: "https://i.postimg.cc/256kpM6B/pngwing-com-48.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -425,6 +463,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 39,
     img: "https://i.postimg.cc/43mg2cL6/pngwing-com-47.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -436,6 +475,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 40,
     img: "https://i.postimg.cc/mr5bTjzp/pngwing-com-46.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -447,6 +487,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 41,
     img: "https://i.postimg.cc/rsScCLh7/pngwing-com-45.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -458,6 +499,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 42,
     img: "https://i.postimg.cc/B6PJbF2S/pngwing-com-44.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -469,6 +511,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 43,
     img: "https://i.postimg.cc/VvymCNFj/pngwing-com-43.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -480,6 +523,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 44,
     img: "https://i.postimg.cc/gcRYPvY4/pngwing-com-42.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -491,6 +535,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 45,
     img: "https://i.postimg.cc/Bnh3CpgZ/pngwing-com-41.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -502,6 +547,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 46,
     img: "https://i.postimg.cc/T3xjcqPs/pngwing-com-40.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -513,6 +559,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 47,
     img: "https://i.postimg.cc/wBThCqLc/pngwing-com-39.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -524,6 +571,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 48,
     img: "https://i.postimg.cc/RZT7p66Z/pngwing-com-38.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -535,6 +583,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 49,
     img: "https://i.postimg.cc/wMJJX7YH/pngwing-com-37.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -546,6 +595,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 50,
     img: "https://i.postimg.cc/hGy9gk0F/pngwing-com-36.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -557,6 +607,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 51,
     img: "https://i.postimg.cc/tTsFgBrs/pngwing-com-35.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -568,6 +619,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 52,
     img: "https://i.postimg.cc/50DLQ8Gn/pngwing-com-34.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -579,6 +631,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 53,
     img: "https://i.postimg.cc/4yHBHf3R/pngwing-com-33.png",
     title: "DJI Osmo Pocket 3 Creator Combo ",
     star: 3,
@@ -590,6 +643,7 @@ const data = [
     category: "sneakers",
   },
   {
+    id: 54,
     img: "https://i.postimg.cc/BZ1x9wLy/pngwing-com-32.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -601,6 +655,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 55,
     img: "https://i.postimg.cc/L6KjHBjs/pngwing-com-31.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -612,6 +667,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 56,
     img: "https://i.postimg.cc/nhTmYygs/pngwing-com-30.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -623,6 +679,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 57,
     img: "https://i.postimg.cc/pXfzyhBJ/pngwing-com-29.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -634,6 +691,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 58,
     img: "https://i.postimg.cc/tgMV8hXp/pngwing-com-28.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -645,6 +703,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 59,
     img: "https://i.postimg.cc/0y9mSkWR/pngwing-com-27.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -656,6 +715,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 60,
     img: "https://i.postimg.cc/W43k99c5/pngwing-com-26.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -667,6 +727,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 61,
     img: "https://i.postimg.cc/Y9Lm7h9g/pngwing-com-25.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -678,6 +739,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 62,
     img: "https://i.postimg.cc/0jgKyPM4/pngwing-com-24.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -689,6 +751,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 63,
     img: "https://i.postimg.cc/cCQgK2fL/pngwing-com-23.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -700,6 +763,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 64,
     img: "https://i.postimg.cc/RVBnrCz6/pngwing-com-22.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -711,6 +775,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 65,
     img: "https://i.postimg.cc/VsMbHr2P/pngwing-com-21.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -722,6 +787,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 66,
     img: "https://i.postimg.cc/vZ8gBPTG/pngwing-com-20.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -733,6 +799,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 67,
     img: "https://i.postimg.cc/jjmLMtXj/pngwing-com-19.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -744,6 +811,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 68,
     img: "https://i.postimg.cc/5t6X568G/pngwing-com-18.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -755,6 +823,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 69,
     img: "https://i.postimg.cc/TYJ5T8Rk/pngwing-com-17.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -766,6 +835,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 70,
     img: "https://i.postimg.cc/SxZXzWYC/pngwing-com-16.png",
     title: "Wedding Prom Bridal",
     star: 4,
@@ -777,6 +847,7 @@ const data = [
     category: "flats",
   },
   {
+    id: 71,
     img: "https://i.postimg.cc/gJhr5QSH/pngwing-com-15.png",
     title: 'Smart SEL-32B24K 32" HD Basic LED TV',
     star: 4,
@@ -788,6 +859,7 @@ const data = [
     category: "TV",
   },
   {
+    id: 72,
     img: "https://i.postimg.cc/gcvnK96Y/pngwing-com-14.png",
     title: "OnePlus 32 Y1G Y Series 32-Inch HD Smart Android TV",
     star: 4,
@@ -799,6 +871,7 @@ const data = [
     category: "TV",
   },
   {
+    id: 73,
     img: "https://i.postimg.cc/4NsnL8zp/pngwing-com-13.png",
     title: 'Smart SEL-32S22KS 32" HD LED Android TV',
     star: 4,
@@ -810,6 +883,7 @@ const data = [
     category: "TV",
   },
   {
+    id: 74,
     img: "https://i.postimg.cc/J0WtWxSV/pngwing-com-12.png",
     title: "Daewoo 32DE54HLB 32 Inch HD Android Google Smart TV",
     star: 4,
@@ -821,6 +895,7 @@ const data = [
     category: "TV",
   },
   {
+    id: 75,
     img: "https://i.postimg.cc/rsCsyWLd/pngwing-com-11.png",
     title: "T-Wolf V1 7 Color RGB Gaming Mouse",
     star: 4,
@@ -832,6 +907,7 @@ const data = [
     category: "accessories",
   },
   {
+    id: 76,
     img: "https://i.postimg.cc/XYvq3p1J/pngwing-com-10.png",
     title: "Lexar JumpDrive Dual Drive D400 128GB USB 3.1 Type-C Pen Drive",
     star: 4,
@@ -843,6 +919,7 @@ const data = [
     category: "accessories",
   },
   {
+    id: 77,
     img: "https://i.postimg.cc/xT58WKRh/pngwing-com-9.png",
     title: "Team Vulcan Z 8GB DDR4 3200MHz Gaming RAM",
     star: 4,
@@ -854,6 +931,7 @@ const data = [
     category: "components",
   },
   {
+    id: 78,
     img: "https://i.postimg.cc/MT1KtRHs/pngwing-com-8.png",
     title: "Asus PRIME B840M-A WIFI-CSM AM5 mATX Motherboard",
     star: 4,
@@ -865,6 +943,7 @@ const data = [
     category: "components",
   },
   {
+    id: 79,
     img: "https://i.postimg.cc/XNcYCwTq/pngwing-com-7.png",
     title: "MSI Modern 14 C7M AMD Ryzen 5 7430U 14 FHD Laptop",
     star: 4,
@@ -876,6 +955,7 @@ const data = [
     category: "Laptop",
   },
   {
+    id: 80,
     img: "https://i.postimg.cc/TPLPLB6v/pngwing-com-6.png",
     title: "MSI Modern 14 C7M AMD Ryzen 5 7430U 14 FHD Laptop",
     star: 4,
@@ -887,6 +967,7 @@ const data = [
     category: "Laptop",
   },
   {
+    id: 81,
     img: "https://i.postimg.cc/L80Xs2GV/pngwing-com-5.png",
     title: "HP 15-fd0290TU Core i5 13th Gen 15.6 FHD Laptop",
     star: 4,
@@ -898,6 +979,7 @@ const data = [
     category: "Laptop",
   },
   {
+    id: 82,
     img: "https://i.postimg.cc/k50gxwJ6/pngwing-com-4.png",
     title: "AMD Ryzen 5 5600G Desktop PC",
     star: 4,
@@ -909,6 +991,7 @@ const data = [
     category: "desktop",
   },
   {
+    id: 83,
     img: "https://i.postimg.cc/Y0k2P9mt/pngwing-com-3.png",
     title: "AMD Ryzen 5 3400G Processor Desktop PC",
     star: 4,
@@ -920,6 +1003,7 @@ const data = [
     category: "desktop",
   },
   {
+    id: 84,
     img: "https://i.postimg.cc/8cHkgShM/pngwing-com-2.png",
     title: "AMD Ryzen 5 2400G Desktop PC",
     star: 4,
@@ -931,6 +1015,7 @@ const data = [
     category: "desktop",
   },
   {
+    id: 85,
     img: "https://i.postimg.cc/02V5t95q/pngwing-com-1.png",
     title: "AMD Ryzen 5 5600GT Budget Desktop PC",
     star: 4,

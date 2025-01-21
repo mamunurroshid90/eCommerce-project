@@ -7,7 +7,7 @@ const Category = () => {
   return (
     <>
       <div className=" hidden lg:block">
-        <div className=" w-full bg-white ">
+        <div className=" w-full bg-white fixed">
           <div className=" container max-w-screen-xl flex justify-between items-center gap-2  py-4 shadow px-2 relative">
             {categories.map((category, index) => (
               <div className=" group">

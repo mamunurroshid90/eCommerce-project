@@ -31,6 +31,7 @@ const FeaturedProducts = ({ data }) => {
         <div className=" px-container-padding grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 pb-10 pt-7">
           {currentItems.map(
             ({
+              id,
               img,
               title,
               star,
@@ -43,6 +44,7 @@ const FeaturedProducts = ({ data }) => {
             }) => (
               <FeaturedProductsCart
                 key={Math.random}
+                id={id}
                 img={img}
                 title={title}
                 star={star}
