@@ -7,23 +7,21 @@ import { MdAccountBox } from "react-icons/md";
 import { FaBars } from "react-icons/fa6";
 import { MdShoppingBasket } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
-import { categories } from "../category/categoryLinks";
-import { HiOutlineMinus } from "react-icons/hi";
-import { AiOutlinePlus } from "react-icons/ai";
+
 import { Link } from "react-router-dom";
+import ResponsiveNavbar from "../responsiveNavbar/ResponsiveNavbar";
 
 const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
-  const [heading, setHeading] = useState("");
-  // const [subHeading, setSubHeading] = useState("");
+  // const [category, setCategory] = useState(false);
 
   return (
     <>
-      <div className=" bg-bgColor">
+      <div className=" bg-bgColor w-full lg:static fixed top-0 left-0 z-10">
         <nav className="  max-w-screen-xl mx-auto lg:flex lg:justify-between md:items-center">
           {/* responsive side */}
-          <div className=" z-50 py-4 sm:px-3 flex items-center justify-between font-bodyFont p-5 md:w-auto w-full ">
+          <div className=" z-30 py-4 sm:px-3 flex items-center justify-between font-bodyFont p-5 md:w-auto w-full ">
             <div
               onClick={() => setOpenMenu(!openMenu)}
               className=" block lg:hidden text-white cursor-pointer "
@@ -111,56 +109,7 @@ const SearchBar = () => {
             </div>
           )}
           {/* responsive menu */}
-          <ul
-            className={` overflow-y-scroll flex flex-col gap-4 md:hidden bg-white absolute w-[70%] h-full bottom-0 py-4 pl-4 duration-500 top-[72px] z-30  ${
-              openMenu ? "left-0" : "left-[-100%]"
-            }`}
-          >
-            {categories.map((category, index) => (
-              <div className=" ">
-                <li
-                  onClick={() =>
-                    heading !== category.name
-                      ? setHeading(category.name)
-                      : setHeading("")
-                  }
-                  key={index}
-                  className=" cursor-pointer font-titleFont font-medium text-black hover:text-primaryColor flex justify-between items-center pr-5 py-2 border-b border-[#ebdede]"
-                >
-                  {category.name}
-                  <span>
-                    {heading === category.name ? (
-                      <HiOutlineMinus />
-                    ) : (
-                      <AiOutlinePlus />
-                    )}
-                  </span>
-                </li>
-                <div
-                  className={` ${
-                    heading !== category.name ? "hidden" : "md:hidden"
-                  }`}
-                >
-                  {/* subLinks */}
-                  {category.subLinks.map((subLink) => (
-                    <div>
-                      <div>
-                        <h3
-                          onClick={() =>
-                            heading === subLink.Head
-                              ? setHeading(subLink.Head)
-                              : setHeading("")
-                          }
-                        >
-                          {subLink.Head}
-                        </h3>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </ul>
+          {openMenu && <ResponsiveNavbar openMenu={openMenu} />}
         </nav>
       </div>
     </>
