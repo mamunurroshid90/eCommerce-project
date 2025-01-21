@@ -3,10 +3,10 @@ import { categories } from "../category/categoryLinks";
 import { HiOutlineMinus } from "react-icons/hi";
 import { AiOutlinePlus } from "react-icons/ai";
 
-const ResponsiveNavbar = ({ openMenu }) => {
+const ResponsiveNavbar = ({ openMenu, menuRef }) => {
   const [heading, setHeading] = useState("");
   return (
-    <div>
+    <div ref={menuRef}>
       <ul
         className={` overflow-y-scroll flex flex-col gap-4 md:hidden bg-white absolute w-[70%] h-screen bottom-0 py-4 pl-4 duration-500 top-[72px] z-50  ${
           openMenu ? "left-0" : "left-[-100%]"

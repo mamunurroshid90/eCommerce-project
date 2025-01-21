@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Logo from "../../assets/images/logo.png";
 import { IoSearch } from "react-icons/io5";
 import { MdCardGiftcard } from "react-icons/md";
@@ -14,7 +14,28 @@ import ResponsiveNavbar from "../responsiveNavbar/ResponsiveNavbar";
 const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
-  // const [category, setCategory] = useState(false);
+  const menuRef = useRef(null);
+
+  // Function to handle clicks outside the menu
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setOpenMenu(false);
+    }
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpenMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -109,7 +130,11 @@ const SearchBar = () => {
             </div>
           )}
           {/* responsive menu */}
-          {openMenu && <ResponsiveNavbar openMenu={openMenu} />}
+          {openMenu && (
+            <div>
+              <ResponsiveNavbar openMenu={openMenu} menuRef={menuRef} />
+            </div>
+          )}
         </nav>
       </div>
     </>
