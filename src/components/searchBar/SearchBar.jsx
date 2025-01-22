@@ -105,7 +105,6 @@ const SearchBar = () => {
               <div>
                 <p className=" leading-none text-white">Account</p>
                 <small className=" text-xs leading-none text-grayColor ">
-                  {" "}
                   <span>register</span> or <span>login</span>
                 </small>
               </div>

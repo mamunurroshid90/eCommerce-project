@@ -1,15 +1,35 @@
 const data = [
   {
     id: 1,
-    img: "https://i.postimg.cc/C1X9Q6BY/pngwing-com-85.png",
-    title: "Nike Air Vapormax Plus Nike Air Vapormax Plus ",
+    img: "https://i.postimg.cc/mr6nP6SM/pngwing-com-83.png",
+    title: "Samsung MC457TGRCSR/D2 45L Convection Microwave Oven",
+    status: "in stock",
+    productCode: "37110",
+    model: "MC457TGRCSR/D2",
+    capacity: "45-Liters, LED Display",
+    turntable: "360mm",
+    conventionPower: "1550 Watt",
+    features: "Timer, Defrost, Auto Cook",
     star: 4,
     reviews: "(123 reviews)",
     prevPrice: "$140,00",
     newPrice: "$200",
-    company: "Nike",
-    color: "red",
+    company: "Samsung",
     category: "sneakers",
+    link: "",
+    description: {
+      title_1: "Samsung MC457TGRCSR/D2 45L Convection Microwave Oven",
+      desc_1:
+        "The Samsung MC457TGRCSR/D2 45L Convection Microwave Oven is a large and powerful device intended to handle the needs of a busy kitchen. This microwave's massive 45-liter capacity makes it ideal for large families or individuals who often prepare large meals, with plenty of room to fit large dishes and several serves. The 360mm turntable guarantees uniform cooking by gently spinning the food, ensuring that every section of your dish is perfectly cooked. This Samsung MC457TGRCSR/D2 microwave oven features a bright LED display that provides clear and easy-to-read information on cooking settings and timeframes, making it simple to use. The 1550 watt convection power provides reliable performance, allowing you to bake, roast, and grill with the efficiency of a traditional oven. In addition to its excellent convection capabilities, this Samsung MC457TGRCSR/D2 microwave has a number of useful functions. The timer feature lets you to specify specific cooking periods, while the defrost function thaws frozen meals fast and evenly, retaining their texture and flavor. The auto cook feature makes meal preparation easier by automatically changing the cooking time and power level for a variety of foods. The Samsung MC457TGRCSR/D2 45L Convection Microwave Oven is a flexible and dependable kitchen appliance that combines sophisticated functionality with an easy-to-use design, making it an ideal choice for anybody wishing to improve their cooking experience.",
+    },
+    title_2:
+      "Buy Samsung MC457TGRCSR/D2 45L Convection Microwave Oven from Star Tech",
+    des_2:
+      "In Bangladesh, you can get original Samsung MC457TGRCSR/D2 45L Convection Microwave Oven From Star Tech. We have a large collection of latest Samsung Oven to purchase. Order Online Or Visit your Nearest Star Tech Shop to get yours at lowest price. The Samsung MC457TGRCSR/D2 45L Convection Microwave Oven comes with 1 year Official warranty. Samsung Warranty Card must be kept for warranty claims.",
+    title_3:
+      "What is the price of Samsung MC457TGRCSR/D2 45L Microwave Oven in Bangladesh?",
+    des_3:
+      "The latest price of Samsung MC457TGRCSR/D2 45L Microwave Oven in Bangladesh is 36,900৳. You can buy the Samsung MC457TGRCSR/D2 45L Microwave Oven at best price from our website or visit any of our showrooms.",
   },
 
   {
@@ -26,7 +46,7 @@ const data = [
   },
   {
     id: 3,
-    img: "https://i.postimg.cc/mr6nP6SM/pngwing-com-83.png",
+    img: "https://i.postimg.cc/C1X9Q6BY/pngwing-com-85.png",
     title: "Nike Running Shoe",
     star: 4,
     reviews: "(123 reviews)",
