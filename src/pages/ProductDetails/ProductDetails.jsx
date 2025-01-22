@@ -1,6 +1,8 @@
 import React from "react";
 import products from "../../db/data";
 import { Link, useParams } from "react-router-dom";
+import { FaMinus } from "react-icons/fa6";
+import { FiPlus } from "react-icons/fi";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -13,47 +15,47 @@ const ProductDetails = () => {
   return (
     <>
       <div className=" bg-white">
-        <div className=" container max-w-screen-xl mx-auto lg:pt-7 h-fit">
+        <div className=" container max-w-screen-xl mx-auto lg:pt-7 pt-16 h-fit px-3">
           <div>
-            <div className=" grid grid-cols-2 gap-5 py-7">
-              <div className=" flex justify-center items-center">
+            <div className=" lg:grid lg:grid-cols-5 lg:gap-5 py-7 ">
+              <div className=" flex justify-center items-center col-span-2 pb-5">
                 <img
                   src={product.img}
                   alt="product img"
-                  className=" h-[200px]"
+                  className=" lg:h-[200px] h-[150px]"
                 />
               </div>
-              <div>
-                <h3 className=" text-xl font-titleFont font-medium text-blue-800">
+              <div className=" col-span-3">
+                <h3 className=" lg:text-xl text-lg font-titleFont font-medium text-blue-800">
                   {product.title}
                 </h3>
                 <div className=" mt-6 flex flex-col gap-y-2">
-                  <h2 className=" text-lg font-medium font-titleFont mb-3">
+                  <h2 className=" lg:text-lg text-base font-medium font-titleFont mb-3">
                     Key Features
                   </h2>
-                  <p className=" text-base font-medium font-bodyFont">
+                  <p className=" lg:text-base text-sm font-medium font-bodyFont">
                     Model: {product.model}
                   </p>
-                  <p className=" text-base font-medium font-bodyFont">
+                  <p className=" lg:text-base text-sm font-medium font-bodyFont">
                     Capacity: {product.capacity}
                   </p>
-                  <p className=" text-base font-medium font-bodyFont">
+                  <p className=" lg:text-base text-sm font-medium font-bodyFont">
                     TurnTable: {product.turntable}
                   </p>
-                  <p className=" text-base font-medium font-bodyFont">
+                  <p className=" lg:text-base text-sm font-medium font-bodyFont">
                     Convention Power: {product.conventionPower}
                   </p>
-                  <p className=" text-base font-medium font-bodyFont">
+                  <p className=" lg:text-base text-sm font-medium font-bodyFont">
                     Features: {product.features}
                   </p>
-                  <Link className=" text-primaryDark border-b border-b-primaryDark inline w-fit capitalize text-base font-bodyFont">
+                  <Link className=" text-primaryDark border-b border-b-primaryDark inline w-fit capitalize lg:text-base text-sm font-bodyFont">
                     view more info
                   </Link>
                   <div className=" mt-4">
                     <h3 className=" text-xl font-titleFont font-medium">
                       Payment Options
                     </h3>
-                    <div className=" grid grid-cols-2 gap-5 mt-3">
+                    <div className=" lg:grid lg:grid-cols-2 lg:gap-5 grid gap-3 mt-3">
                       <div className=" border py-2 px-3 flex items-center gap-4">
                         <input
                           type="radio"
@@ -105,14 +107,35 @@ const ProductDetails = () => {
                       </div>
                     </div>
                   </div>
-                  <div className=" flex items-center gap-3">
-                    <div>
-                      <button> - </button>
-                      <button> 1 </button>
-                      <button> + </button>
+                  <div className=" flex items-center gap-3 mt-3">
+                    <div className="">
+                      <label
+                        htmlFor=""
+                        className=" flex items-center border border-[#EDF2F5] w-[140px]"
+                      >
+                        <span className=" text-base flex justify-center items-center basis-10 border-r border-[#dcddde]">
+                          <FaMinus />
+                        </span>
+                        <span>
+                          <input
+                            type="text"
+                            value={1}
+                            size={4}
+                            className=" w-[60px] h-[40px] border-none text-center "
+                          />
+                        </span>
+                        <span className=" text-base flex justify-center items-center basis-10 border-l border-[#dcddde]">
+                          <FiPlus />
+                        </span>
+                      </label>
                     </div>
                     <div>
-                      <button>Buy Now</button>
+                      <button className=" py-3 lg:min-w-[200px] min-w-[100px] rounded-md bg-blue-700 text-white font-semibold relative overflow-hidden px-6 group">
+                        <span className=" absolute inset-0 bg-gradient-to-t from-blue-700 to-blue-900 transition-all duration-300 ease-out transform -translate-y-full group-hover:translate-y-0"></span>
+                        <span className=" relative z-10 text-sm font-semibold">
+                          Buy Now
+                        </span>
+                      </button>
                     </div>
                   </div>
                 </div>
