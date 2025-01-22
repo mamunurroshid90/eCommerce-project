@@ -144,6 +144,24 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+      {/* description details */}
+      <div>
+        <div>
+          <div className=" container mx-auto max-w-screen-xl my-5">
+            <ul className=" flex gap-3">
+              <Link className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded">
+                <span className=" font-medium">Description</span>
+              </Link>
+              <Link className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded">
+                <span className=" font-medium">Questions(0)</span>
+              </Link>
+              <Link className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded">
+                <span className=" font-medium">Reviews(0)</span>
+              </Link>
+            </ul>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
