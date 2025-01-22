@@ -111,9 +111,9 @@ const ProductDetails = () => {
                     <div className="">
                       <label
                         htmlFor=""
-                        className=" flex items-center border border-[#EDF2F5] w-[140px]"
+                        className=" flex items-center border border-[#EDF2F5] w-[140px] "
                       >
-                        <span className=" text-base flex justify-center items-center basis-10 border-r border-[#dcddde]">
+                        <span className=" text-base flex justify-center items-center w-10 h-10 border-r border-[#dcddde] hover:bg-[#EDF2F5]">
                           <FaMinus />
                         </span>
                         <span>
@@ -121,10 +121,10 @@ const ProductDetails = () => {
                             type="text"
                             value={1}
                             size={4}
-                            className=" w-[60px] h-[40px] border-none text-center "
+                            className=" w-[60px] h-[40px] border-none text-center outline-none hover:bg-[#EDF2F5]"
                           />
                         </span>
-                        <span className=" text-base flex justify-center items-center basis-10 border-l border-[#dcddde]">
+                        <span className=" text-base flex justify-center items-center w-10 h-10 border-l border-[#dcddde] hover:bg-[#EDF2F5]">
                           <FiPlus />
                         </span>
                       </label>
