@@ -14,7 +14,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 const Banner = ({ data }) => {
   return (
     <>
-      <div className=" container max-w-screen-xl mx-auto mt-6 px-3">
+      <div className=" container max-w-screen-xl mx-auto lg:mt-6 mt-20 px-3">
         <Swiper
           rewind={true}
           autoplay={{ delay: 2000 }}
