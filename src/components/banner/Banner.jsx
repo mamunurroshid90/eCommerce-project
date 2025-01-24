@@ -23,7 +23,7 @@ const Banner = ({ data }) => {
         >
           {data.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className=" max-w-full max-h-[400px] aspect-square flex justify-center items-center">
+              <div className=" max-w-full max-h-[400px] aspect-square flex justify-center items-center p-3">
                 <img src={item.img} alt="img" height={500} className="" />
               </div>
             </SwiperSlide>
