@@ -150,7 +150,7 @@ const ProductDetails = () => {
       </div>
       {/* description details */}
       <div className=" pb-10 px-3">
-        <div className=" container mx-auto max-w-screen-xl lg:my-5 lg:grid lg:grid-cols-12 lg:gap-5">
+        <div className=" container mx-auto max-w-screen-xl lg:my-5 mt-5 lg:grid lg:grid-cols-12 lg:gap-5">
           <div className=" col-span-9">
             <div>
               <ul className=" flex flex-wrap gap-3">
