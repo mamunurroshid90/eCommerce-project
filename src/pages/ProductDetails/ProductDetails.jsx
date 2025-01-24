@@ -5,6 +5,7 @@ import { FaMinus } from "react-icons/fa6";
 import { FiPlus } from "react-icons/fi";
 import { RiMessage2Fill } from "react-icons/ri";
 import { MdAssignment } from "react-icons/md";
+import { TbCopyPlusFilled } from "react-icons/tb";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -149,108 +150,214 @@ const ProductDetails = () => {
       </div>
       {/* description details */}
       <div className=" pb-10 px-3">
-        <div>
-          <div className=" container mx-auto max-w-screen-xl my-5">
-            <ul className=" flex flex-wrap gap-3">
-              <Link className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded">
-                <span className=" font-medium">Description</span>
-              </Link>
-              <Link className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded">
-                <span className=" font-medium">Questions(0)</span>
-              </Link>
-              <Link className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded">
-                <span className=" font-medium">Reviews(0)</span>
-              </Link>
-            </ul>
-          </div>
-          <div className=" container max-w-screen-xl bg-white px-5 py-7 rounded shadow">
-            <h3 className=" font-titleFont font-semibold text-xl">
-              Description
-            </h3>
-            <div className=" pt-7">
+        <div className=" container mx-auto max-w-screen-xl lg:my-5 lg:grid lg:grid-cols-12 lg:gap-5">
+          <div className=" col-span-9">
+            <div>
+              <ul className=" flex flex-wrap gap-3">
+                <Link className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded">
+                  <span className=" font-medium">Description</span>
+                </Link>
+                <Link className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded">
+                  <span className=" font-medium">Questions(0)</span>
+                </Link>
+                <Link className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded">
+                  <span className=" font-medium">Reviews(0)</span>
+                </Link>
+              </ul>
+            </div>
+            <div className=" container max-w-screen-xl bg-white px-5 py-7 rounded shadow mt-5">
+              <h3 className=" font-titleFont font-semibold text-xl">
+                Description
+              </h3>
+              <div className=" pt-7">
+                <h2 className=" lg:text-xl text-base font-semibold font-titleFont leading-tight">
+                  {product.description.title_1}
+                </h2>
+                <p className=" lg:text-base text-sm font-bodyFont font-medium lg:mt-5 mt-2">
+                  {product.description.desc_1}
+                </p>
+              </div>
+              <div className=" pt-4">
+                <h2 className=" lg:text-xl text-base font-semibold font-titleFont leading-tight">
+                  {product.description.title_2}
+                </h2>
+                <p className=" lg:text-base text-sm font-bodyFont font-medium lg:mt-5 mt-2">
+                  {product.description.desc_2}
+                </p>
+              </div>
+            </div>
+            <div className=" container max-w-screen-xl bg-white px-5 py-7 rounded shadow mt-5">
               <h2 className=" lg:text-xl text-base font-semibold font-titleFont leading-tight">
-                {product.description.title_1}
+                {product.description.title_3}
               </h2>
-              <p className=" lg:text-base text-sm font-bodyFont font-medium lg:mt-5 mt-2">
-                {product.description.desc_1}
+              <p className=" lg:text-base text-sm font-bodyFont font-medium lg:mt-5 mt-2 ">
+                {product.description.desc_3}
               </p>
             </div>
-            <div className=" pt-4">
-              <h2 className=" lg:text-xl text-base font-semibold font-titleFont leading-tight">
-                {product.description.title_2}
+
+            <div className=" container max-w-screen-xl bg-white px-5 py-7 rounded shadow mt-5">
+              <div className=" flex flex-wrap gap-2 justify-between items-center border-b pb-7">
+                <div className=" ">
+                  <h3 className=" text-xl font-titleFont font-semibold">
+                    Questions(0)
+                  </h3>
+                  <p className=" text-sm text-[#666666] mt-3">
+                    Have question about this product? Get specific details about
+                    this product from expert.
+                  </p>
+                </div>
+                <div className="">
+                  <button className=" lg:py-2 py-2 rounded-md border border-[#3749bb] font-bodyFont text-[#3749bb] font-semibold relative overflow-hidden px-6 hover:text-white group">
+                    <span className=" absolute inset-0 bg-gradient-to-t from-blue-700 to-blue-900 transition-all duration-300 ease-out transform -translate-y-full group-hover:translate-y-0"></span>
+                    <span className=" relative z-10">Ask Question</span>
+                  </button>
+                </div>
+              </div>
+              <div className=" w-full">
+                <div className=" flex flex-col py-12 justify-center items-center">
+                  <div className=" w-[88px] h-[88px] bg-[#3749BB0D] rounded-full flex justify-center items-center">
+                    <RiMessage2Fill className=" text-[#3749bb] text-4xl" />
+                  </div>
+                  <p className=" text-sm text-[#666666] mt-3 font-bodyFont">
+                    This product has no reviews yet. Be the first one to write a
+                    review.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className=" container max-w-screen-xl bg-white px-5 py-7 rounded shadow mt-5">
+              <div className=" flex flex-wrap gap-2 justify-between items-center border-b pb-7">
+                <div className=" ">
+                  <h3 className=" text-xl font-titleFont font-semibold">
+                    Reviews (0)
+                  </h3>
+                  <p className=" text-sm text-[#666666] mt-3">
+                    There are no questions asked yet. Be the first one to ask a
+                    question.
+                  </p>
+                </div>
+                <div className="">
+                  <button className="lg:py-2 py-2 rounded-md border border-[#3749bb] font-bodyFont text-[#3749bb] font-semibold relative overflow-hidden px-6 hover:text-white group">
+                    <span className="absolute inset-0 bg-gradient-to-t from-blue-700 to-blue-900 transition-all duration-300 ease-out transform -translate-y-full group-hover:translate-y-0"></span>
+                    <span className=" relative z-10">Write a Review</span>
+                  </button>
+                </div>
+              </div>
+              <div className=" w-full">
+                <div className=" flex flex-col py-12 justify-center items-center">
+                  <div className=" w-[88px] h-[88px] bg-[#3749BB0D] rounded-full flex justify-center items-center">
+                    <MdAssignment className=" text-[#3749bb] text-4xl" />
+                  </div>
+                  <p className=" text-sm text-[#666666] mt-3 font-bodyFont">
+                    This product has no reviews yet. Be the first one to write a
+                    review.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Related products items */}
+          <div className=" col-span-3 mt-4 lg:mt-0">
+            <div className=" bg-white py-5 px-4 rounded max-h-fit shadow">
+              <h2 className="text-xl text-[#3749dd] font-titleFont font-semibold text-center pb-3">
+                Related Products
               </h2>
-              <p className=" lg:text-base text-sm font-bodyFont font-medium lg:mt-5 mt-2">
-                {product.description.desc_2}
-              </p>
-            </div>
-          </div>
-          <div className=" container max-w-screen-xl bg-white px-5 py-7 rounded shadow mt-5">
-            <h2 className=" lg:text-xl text-base font-semibold font-titleFont leading-tight">
-              {product.description.title_3}
-            </h2>
-            <p className=" lg:text-base text-sm font-bodyFont font-medium lg:mt-5 mt-2 ">
-              {product.description.desc_3}
-            </p>
-          </div>
-
-          <div className=" container max-w-screen-xl bg-white px-5 py-7 rounded shadow mt-5">
-            <div className=" flex flex-wrap gap-2 justify-between items-center border-b pb-7">
-              <div className=" ">
-                <h3 className=" text-xl font-titleFont font-semibold">
-                  Questions(0)
-                </h3>
-                <p className=" text-sm text-[#666666] mt-3">
-                  Have question about this product? Get specific details about
-                  this product from expert.
-                </p>
-              </div>
-              <div className="">
-                <button className=" lg:py-2 py-2 rounded-md border border-[#3749bb] font-bodyFont text-[#3749bb] font-semibold relative overflow-hidden px-6 hover:text-white group">
-                  <span className=" absolute inset-0 bg-gradient-to-t from-blue-700 to-blue-900 transition-all duration-300 ease-out transform -translate-y-full group-hover:translate-y-0"></span>
-                  <span className=" relative z-10">Ask Question</span>
-                </button>
-              </div>
-            </div>
-            <div className=" w-full">
-              <div className=" flex flex-col py-12 justify-center items-center">
-                <div className=" w-[88px] h-[88px] bg-[#3749BB0D] rounded-full flex justify-center items-center">
-                  <RiMessage2Fill className=" text-[#3749bb] text-4xl" />
+              <div>
+                <div className=" grid grid-cols-8 gap-3 px-2 py-5 border-t">
+                  <div className=" col-span-2 pt-4">
+                    <img src={product.img} alt="product-img" className="" />
+                  </div>
+                  <div className=" col-span-6">
+                    <h2 className=" text-base font-medium font-titleFont hover:underline hover:text-primaryColor">
+                      {product.title}
+                    </h2>
+                    <div className=" mt-1 flex items-center gap-2">
+                      <span className=" text-primaryColor font-semibold text-lg">
+                        {product.newPrice}
+                      </span>
+                      <span className=" line-through text-sm">
+                        {product.prevPrice}
+                      </span>
+                    </div>
+                    <div className=" flex items-center gap-2 mt-2 text-[#666666]">
+                      <TbCopyPlusFilled className=" text-xl" />
+                      <span className=" text-xs">Add to Compare</span>
+                    </div>
+                  </div>
                 </div>
-                <p className=" text-sm text-[#666666] mt-3 font-bodyFont">
-                  This product has no reviews yet. Be the first one to write a
-                  review.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className=" container max-w-screen-xl bg-white px-5 py-7 rounded shadow mt-5">
-            <div className=" flex flex-wrap gap-2 justify-between items-center border-b pb-7">
-              <div className=" ">
-                <h3 className=" text-xl font-titleFont font-semibold">
-                  Reviews (0)
-                </h3>
-                <p className=" text-sm text-[#666666] mt-3">
-                  There are no questions asked yet. Be the first one to ask a
-                  question.
-                </p>
-              </div>
-              <div className="">
-                <button className="lg:py-2 py-2 rounded-md border border-[#3749bb] font-bodyFont text-[#3749bb] font-semibold relative overflow-hidden px-6 hover:text-white group">
-                  <span className="absolute inset-0 bg-gradient-to-t from-blue-700 to-blue-900 transition-all duration-300 ease-out transform -translate-y-full group-hover:translate-y-0"></span>
-                  <span className=" relative z-10">Write a Review</span>
-                </button>
-              </div>
-            </div>
-            <div className=" w-full">
-              <div className=" flex flex-col py-12 justify-center items-center">
-                <div className=" w-[88px] h-[88px] bg-[#3749BB0D] rounded-full flex justify-center items-center">
-                  <MdAssignment className=" text-[#3749bb] text-4xl" />
+                <div className=" grid grid-cols-8 gap-3 px-2 py-5 border-t">
+                  <div className=" col-span-2 pt-4">
+                    <img src={product.img} alt="product-img" className="" />
+                  </div>
+                  <div className=" col-span-6">
+                    <h2 className=" text-base font-medium font-titleFont hover:underline hover:text-primaryColor">
+                      {product.title}
+                    </h2>
+                    <div className=" mt-1 flex items-center gap-2">
+                      <span className=" text-primaryColor font-semibold text-lg">
+                        {product.newPrice}
+                      </span>
+                      <span className=" line-through text-sm">
+                        {product.prevPrice}
+                      </span>
+                    </div>
+                    <div className=" flex items-center gap-2 mt-2 text-[#666666]">
+                      <TbCopyPlusFilled className=" text-xl" />
+                      <span className=" text-xs">Add to Compare</span>
+                    </div>
+                  </div>
                 </div>
-                <p className=" text-sm text-[#666666] mt-3 font-bodyFont">
-                  This product has no reviews yet. Be the first one to write a
-                  review.
-                </p>
+                <div className=" grid grid-cols-8 gap-3 px-2 py-5 border-t">
+                  <div className=" col-span-2 pt-4">
+                    <img src={product.img} alt="product-img" className="" />
+                  </div>
+                  <div className=" col-span-6">
+                    <h2 className=" text-base font-medium font-titleFont hover:underline hover:text-primaryColor">
+                      {product.title}
+                    </h2>
+                    <div className=" mt-1 flex items-center gap-2">
+                      <span className=" text-primaryColor font-semibold text-lg">
+                        {product.newPrice}
+                      </span>
+                      <span className=" line-through text-sm">
+                        {product.prevPrice}
+                      </span>
+                    </div>
+                    <div className=" flex items-center gap-2 mt-2 text-[#666666]">
+                      <TbCopyPlusFilled className=" text-xl" />
+                      <span className=" text-xs">Add to Compare</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Recently Viewed */}
+            <div className=" bg-white px-3 py-5 shadow mt-5 rounded">
+              <h2 className="text-xl text-[#3749dd] font-titleFont font-semibold text-center pb-3">
+                Recently Viewed
+              </h2>
+              <div className=" grid grid-cols-8 gap-3 px-2 py-5 border-t">
+                <div className=" col-span-2 pt-4">
+                  <img src={product.img} alt="product-img" className="" />
+                </div>
+                <div className=" col-span-6">
+                  <h2 className=" text-base font-medium font-titleFont hover:underline hover:text-primaryColor">
+                    {product.title}
+                  </h2>
+                  <div className=" mt-1 flex items-center gap-2">
+                    <span className=" text-primaryColor font-semibold text-lg">
+                      {product.newPrice}
+                    </span>
+                    <span className=" line-through text-sm">
+                      {product.prevPrice}
+                    </span>
+                  </div>
+                  <div className=" flex items-center gap-2 mt-2 text-[#666666]">
+                    <TbCopyPlusFilled className=" text-xl" />
+                    <span className=" text-xs">Add to Compare</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
