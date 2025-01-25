@@ -1,11 +1,12 @@
 import React from "react";
 import products from "../../db/data";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { FaMinus } from "react-icons/fa6";
 import { FiPlus } from "react-icons/fi";
 import { RiMessage2Fill } from "react-icons/ri";
 import { MdAssignment } from "react-icons/md";
 import { TbCopyPlusFilled } from "react-icons/tb";
+import { Link } from "react-scroll";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -153,19 +154,44 @@ const ProductDetails = () => {
         <div className=" container mx-auto max-w-screen-xl lg:my-5 mt-5 lg:grid lg:grid-cols-12 lg:gap-5">
           <div className=" col-span-9">
             <div>
-              <ul className=" flex flex-wrap gap-3">
-                <Link className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded">
+              <ul className=" flex flex-wrap gap-3 cursor-pointer">
+                <Link
+                  to="description"
+                  smooth={true}
+                  duration={500}
+                  offset={-50}
+                  activeClass="active"
+                  className=" inline-block py-2
+                  hover:bg-primaryDark hover:text-white px-6 bg-white shadow
+                  rounded"
+                >
                   <span className=" font-medium">Description</span>
                 </Link>
-                <Link className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded">
+
+                <Link
+                  to="questions"
+                  smooth={true}
+                  duration={500}
+                  offset={-50}
+                  className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded"
+                >
                   <span className=" font-medium">Questions(0)</span>
                 </Link>
-                <Link className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded">
+                <Link
+                  to="reviews"
+                  smooth={true}
+                  duration={500}
+                  offset={-50}
+                  className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded"
+                >
                   <span className=" font-medium">Reviews(0)</span>
                 </Link>
               </ul>
             </div>
-            <div className=" container max-w-screen-xl bg-white px-5 py-7 rounded shadow mt-5">
+            <div
+              id="description"
+              className=" container max-w-screen-xl bg-white px-5 py-7 rounded shadow mt-5"
+            >
               <h3 className=" font-titleFont font-semibold text-xl">
                 Description
               </h3>
@@ -195,7 +221,10 @@ const ProductDetails = () => {
               </p>
             </div>
 
-            <div className=" container max-w-screen-xl bg-white px-5 py-7 rounded shadow mt-5">
+            <div
+              id="questions"
+              className=" container max-w-screen-xl bg-white px-5 py-7 rounded shadow mt-5"
+            >
               <div className=" flex flex-wrap gap-2 justify-between items-center border-b pb-7">
                 <div className=" ">
                   <h3 className=" text-xl font-titleFont font-semibold">
@@ -226,7 +255,10 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            <div className=" container max-w-screen-xl bg-white px-5 py-7 rounded shadow mt-5">
+            <div
+              id="reviews"
+              className=" container max-w-screen-xl bg-white px-5 py-7 rounded shadow mt-5"
+            >
               <div className=" flex flex-wrap gap-2 justify-between items-center border-b pb-7">
                 <div className=" ">
                   <h3 className=" text-xl font-titleFont font-semibold">
