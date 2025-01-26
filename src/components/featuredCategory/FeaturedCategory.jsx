@@ -4,7 +4,7 @@ import { CategoryData } from "../../db/categoryData.js";
 const FeaturedCategory = () => {
   return (
     <>
-      <div className=" container max-w-screen-xl mx-auto mt-16 pb-20 p-container-padding">
+      <div className=" container max-w-screen-xl mx-auto lg:mt-12 mt-6 pb-20 p-container-padding">
         <div>
           <h2 className=" text-section-heading text-center font-bold font-titleFont">
             Featured Category

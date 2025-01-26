@@ -1,5 +1,6 @@
 import React from "react";
 import FeaturedProducts from "../../components/featuredProducts/FeaturedProducts";
+import { bannerData } from "../../db/bannerData";
 import data from "../../db/data";
 import FindStore from "../../components/findStore/FindStore";
 import FeaturedCategory from "../../components/featuredCategory/FeaturedCategory";
@@ -11,7 +12,7 @@ const Home = () => {
   return (
     <>
       <div className=" container max-w-screen-xl mx-auto lg:pt-7">
-        <Banner data={data} />
+        <Banner bannerData={bannerData} />
         <Services />
         <MarqueeComp />
         <FeaturedCategory />

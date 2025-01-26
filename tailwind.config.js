@@ -35,11 +35,6 @@ export default {
         "container-padding": "min(1em, 4%)",
       },
 
-      // fontFamily: {
-      //   bodyFont: ["Work Sans", "serif"],
-      //   titleFont: ["Lora", "serif"],
-      // },
-
       colors: {
         bgColor: "#081621",
         primaryColor: "#ef4a23",

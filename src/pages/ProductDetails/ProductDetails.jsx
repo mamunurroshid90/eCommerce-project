@@ -12,6 +12,17 @@ import RecentlyViewed from "../../components/recentlyViewed/RecentlyViewed";
 const ProductDetails = () => {
   const { id } = useParams();
   const product = products.find((pItem) => pItem.id === parseInt(id));
+  const [productCount, setProductCount] = useState(1);
+
+  const handleIncrease = () => {
+    setProductCount(productCount + 1);
+  };
+
+  const handleDecrease = () => {
+    if (productCount > 1) {
+      setProductCount(productCount - 1);
+    }
+  };
 
   if (!product) {
     return <h1>Product Not Found</h1>;
@@ -41,8 +52,8 @@ const ProductDetails = () => {
                 <h3 className=" lg:text-xl text-lg font-titleFont font-medium text-blueColor">
                   {product.title}
                 </h3>
-                <div className=" mt-6 flex flex-col gap-y-2">
-                  <h2 className=" lg:text-lg text-base font-medium font-titleFont mb-3">
+                <div className=" mt-3 flex flex-col gap-y-2">
+                  <h2 className=" lg:text-lg text-base font-medium font-titleFont">
                     Key Features
                   </h2>
                   <p className=" lg:text-base text-sm font-medium font-bodyFont">
@@ -149,18 +160,30 @@ const ProductDetails = () => {
                         htmlFor=""
                         className=" flex items-center border border-[#ECEDEF] w-[140px] "
                       >
-                        <span className=" text-base flex justify-center items-center w-10 h-10 border-r border-[#ECEDEF] hover:bg-[#EDF2F5]">
+                        <span
+                          onClick={handleDecrease}
+                          disabled={productCount === 1}
+                          className={`text-base flex justify-center items-center cursor-pointer w-10 h-10 border-r border-[#ECEDEF] ${
+                            productCount === 1
+                              ? "cursor-not-allowed opacity-50"
+                              : "hover:bg-[#EDF2F5]"
+                          }`}
+                        >
                           <FaMinus />
                         </span>
                         <span>
                           <input
                             type="text"
-                            value={1}
+                            value={productCount}
                             size={4}
+                            readOnly
                             className=" w-[60px] h-[40px] border-none text-center outline-none hover:bg-[#EDF2F5]"
                           />
                         </span>
-                        <span className=" text-base flex justify-center items-center w-10 h-10 border-l border-[#ECEDEF] hover:bg-[#EDF2F5]">
+                        <span
+                          onClick={handleIncrease}
+                          className=" text-base flex justify-center items-center cursor-pointer w-10 h-10 border-l border-[#ECEDEF] hover:bg-[#EDF2F5]"
+                        >
                           <FiPlus />
                         </span>
                       </label>
