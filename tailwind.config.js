@@ -46,8 +46,9 @@ export default {
         primaryDark: "#D51E0B",
         secondaryColor: "#3749bb",
         grayColor: "#838383",
-        // lightText: "#c4cfde",
-        // boxBg: "linear-gradient(145deg, #1e2024, #23272b)",
+        lightColor: "#666666",
+        blueColor: "#3749bb",
+        borderColor: "#ECEDEF",
       },
       keyframes: {
         gradient: {

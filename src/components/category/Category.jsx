@@ -34,7 +34,7 @@ const Category = () => {
           <div className=" w-full bg-white">
             <div className=" container max-w-screen-xl flex justify-between items-center gap-2  py-4 shadow px-2 relative">
               {categories.map((category, index) => (
-                <div className=" group">
+                <div key={index} className=" group">
                   <h4
                     key={index}
                     className=" cursor-pointer font-titleFont font-medium text-black hover:text-primaryColor"
@@ -48,8 +48,11 @@ const Category = () => {
                           <div className=" absolute  mt-1 w-full h-1 bg-primaryColor"></div>
                         </div>
                         <div className=" flex flex-col gap-2 ">
-                          {category.subLinks.map((subLink) => (
-                            <h5 className=" px-4 py-1 hover:bg-primaryColor hover:text-white flex justify-between items-center">
+                          {category.subLinks.map((subLink, i) => (
+                            <h5
+                              key={i}
+                              className=" px-4 py-1 hover:bg-primaryColor hover:text-white flex justify-between items-center"
+                            >
                               {subLink.Head}
                               <span>
                                 <MdOutlineArrowRight className=" text-lg" />

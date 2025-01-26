@@ -5,8 +5,9 @@ import { FaMinus } from "react-icons/fa6";
 import { FiPlus } from "react-icons/fi";
 import { RiMessage2Fill } from "react-icons/ri";
 import { MdAssignment } from "react-icons/md";
-import { TbCopyPlusFilled } from "react-icons/tb";
 import { Link } from "react-scroll";
+import RelatedProducts from "../../components/relatedProducts/RelatedProducts";
+import RecentlyViewed from "../../components/recentlyViewed/RecentlyViewed";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -31,7 +32,7 @@ const ProductDetails = () => {
                 />
               </div>
               <div className=" col-span-3">
-                <h3 className=" lg:text-xl text-lg font-titleFont font-medium text-blue-800">
+                <h3 className=" lg:text-xl text-lg font-titleFont font-medium text-blueColor">
                   {product.title}
                 </h3>
                 <div className=" mt-6 flex flex-col gap-y-2">
@@ -73,7 +74,7 @@ const ProductDetails = () => {
                             <span className=" text-xl font-bold">
                               {product.newPrice}
                             </span>
-                            <span className=" text-base font-bold line-through text-[#808080]">
+                            <span className=" text-base font-bold line-through text-grayColor">
                               {product.prevPrice}
                             </span>
                           </div>
@@ -81,7 +82,7 @@ const ProductDetails = () => {
                             <span className=" text-sm capitalize">
                               cash discount price
                             </span>
-                            <span className=" text-sm  capitalize text-[#838383]">
+                            <span className=" text-sm  capitalize text-grayColor">
                               Online / cash payment
                             </span>
                           </div>
@@ -104,7 +105,7 @@ const ProductDetails = () => {
                             <span className=" text-sm capitalize">
                               Regular Price: $40,300
                             </span>
-                            <span className=" text-sm  capitalize text-[#838383]">
+                            <span className=" text-sm  capitalize text-grayColor">
                               0% EMI for up to 12 Months***
                             </span>
                           </div>
@@ -116,9 +117,9 @@ const ProductDetails = () => {
                     <div className="">
                       <label
                         htmlFor=""
-                        className=" flex items-center border border-[#EDF2F5] w-[140px] "
+                        className=" flex items-center border border-[#ECEDEF] w-[140px] "
                       >
-                        <span className=" text-base flex justify-center items-center w-10 h-10 border-r border-[#dcddde] hover:bg-[#EDF2F5]">
+                        <span className=" text-base flex justify-center items-center w-10 h-10 border-r border-[#ECEDEF] hover:bg-[#EDF2F5]">
                           <FaMinus />
                         </span>
                         <span>
@@ -129,7 +130,7 @@ const ProductDetails = () => {
                             className=" w-[60px] h-[40px] border-none text-center outline-none hover:bg-[#EDF2F5]"
                           />
                         </span>
-                        <span className=" text-base flex justify-center items-center w-10 h-10 border-l border-[#dcddde] hover:bg-[#EDF2F5]">
+                        <span className=" text-base flex justify-center items-center w-10 h-10 border-l border-[#ECEDEF] hover:bg-[#EDF2F5]">
                           <FiPlus />
                         </span>
                       </label>
@@ -236,7 +237,7 @@ const ProductDetails = () => {
                   </p>
                 </div>
                 <div className="">
-                  <button className=" lg:py-2 py-2 rounded-md border border-[#3749bb] font-bodyFont text-[#3749bb] font-semibold relative overflow-hidden px-6 hover:text-white group">
+                  <button className=" lg:py-2 py-2 rounded-md border border-blueColor font-bodyFont text-blueColor font-semibold relative overflow-hidden px-6 hover:text-white group">
                     <span className=" absolute inset-0 bg-gradient-to-t from-blue-700 to-blue-900 transition-all duration-300 ease-out transform -translate-y-full group-hover:translate-y-0"></span>
                     <span className=" relative z-10">Ask Question</span>
                   </button>
@@ -245,7 +246,7 @@ const ProductDetails = () => {
               <div className=" w-full">
                 <div className=" flex flex-col py-12 justify-center items-center">
                   <div className=" w-[88px] h-[88px] bg-[#3749BB0D] rounded-full flex justify-center items-center">
-                    <RiMessage2Fill className=" text-[#3749bb] text-4xl" />
+                    <RiMessage2Fill className=" text-blueColor text-4xl" />
                   </div>
                   <p className=" text-sm text-[#666666] mt-3 font-bodyFont">
                     This product has no reviews yet. Be the first one to write a
@@ -270,7 +271,7 @@ const ProductDetails = () => {
                   </p>
                 </div>
                 <div className="">
-                  <button className="lg:py-2 py-2 rounded-md border border-[#3749bb] font-bodyFont text-[#3749bb] font-semibold relative overflow-hidden px-6 hover:text-white group">
+                  <button className="lg:py-2 py-2 rounded-md border border-blueColor font-bodyFont text-blueColor font-semibold relative overflow-hidden px-6 hover:text-white group">
                     <span className="absolute inset-0 bg-gradient-to-t from-blue-700 to-blue-900 transition-all duration-300 ease-out transform -translate-y-full group-hover:translate-y-0"></span>
                     <span className=" relative z-10">Write a Review</span>
                   </button>
@@ -279,7 +280,7 @@ const ProductDetails = () => {
               <div className=" w-full">
                 <div className=" flex flex-col py-12 justify-center items-center">
                   <div className=" w-[88px] h-[88px] bg-[#3749BB0D] rounded-full flex justify-center items-center">
-                    <MdAssignment className=" text-[#3749bb] text-4xl" />
+                    <MdAssignment className=" text-blueColor text-4xl" />
                   </div>
                   <p className=" text-sm text-[#666666] mt-3 font-bodyFont">
                     This product has no reviews yet. Be the first one to write a
@@ -291,107 +292,9 @@ const ProductDetails = () => {
           </div>
           {/* Related products items */}
           <div className=" col-span-3 mt-4 lg:mt-0">
-            <div className=" bg-white py-5 px-4 rounded max-h-fit shadow">
-              <h2 className="text-xl text-[#3749dd] font-titleFont font-semibold text-center pb-3">
-                Related Products
-              </h2>
-              <div>
-                <div className=" grid grid-cols-8 gap-3 px-2 py-5 border-t">
-                  <div className=" col-span-2 pt-4">
-                    <img src={product.img} alt="product-img" className="" />
-                  </div>
-                  <div className=" col-span-6">
-                    <h2 className=" text-base font-medium font-titleFont hover:underline hover:text-primaryColor">
-                      {product.title}
-                    </h2>
-                    <div className=" mt-1 flex items-center gap-2">
-                      <span className=" text-primaryColor font-semibold text-lg">
-                        {product.newPrice}
-                      </span>
-                      <span className=" line-through text-sm">
-                        {product.prevPrice}
-                      </span>
-                    </div>
-                    <div className=" flex items-center gap-2 mt-2 text-[#666666]">
-                      <TbCopyPlusFilled className=" text-xl" />
-                      <span className=" text-xs">Add to Compare</span>
-                    </div>
-                  </div>
-                </div>
-                <div className=" grid grid-cols-8 gap-3 px-2 py-5 border-t">
-                  <div className=" col-span-2 pt-4">
-                    <img src={product.img} alt="product-img" className="" />
-                  </div>
-                  <div className=" col-span-6">
-                    <h2 className=" text-base font-medium font-titleFont hover:underline hover:text-primaryColor">
-                      {product.title}
-                    </h2>
-                    <div className=" mt-1 flex items-center gap-2">
-                      <span className=" text-primaryColor font-semibold text-lg">
-                        {product.newPrice}
-                      </span>
-                      <span className=" line-through text-sm">
-                        {product.prevPrice}
-                      </span>
-                    </div>
-                    <div className=" flex items-center gap-2 mt-2 text-[#666666]">
-                      <TbCopyPlusFilled className=" text-xl" />
-                      <span className=" text-xs">Add to Compare</span>
-                    </div>
-                  </div>
-                </div>
-                <div className=" grid grid-cols-8 gap-3 px-2 py-5 border-t">
-                  <div className=" col-span-2 pt-4">
-                    <img src={product.img} alt="product-img" className="" />
-                  </div>
-                  <div className=" col-span-6">
-                    <h2 className=" text-base font-medium font-titleFont hover:underline hover:text-primaryColor">
-                      {product.title}
-                    </h2>
-                    <div className=" mt-1 flex items-center gap-2">
-                      <span className=" text-primaryColor font-semibold text-lg">
-                        {product.newPrice}
-                      </span>
-                      <span className=" line-through text-sm">
-                        {product.prevPrice}
-                      </span>
-                    </div>
-                    <div className=" flex items-center gap-2 mt-2 text-[#666666]">
-                      <TbCopyPlusFilled className=" text-xl" />
-                      <span className=" text-xs">Add to Compare</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <RelatedProducts product={product} />
             {/* Recently Viewed */}
-            <div className=" bg-white px-3 py-5 shadow mt-5 rounded">
-              <h2 className="text-xl text-[#3749dd] font-titleFont font-semibold text-center pb-3">
-                Recently Viewed
-              </h2>
-              <div className=" grid grid-cols-8 gap-3 px-2 py-5 border-t">
-                <div className=" col-span-2 pt-4">
-                  <img src={product.img} alt="product-img" className="" />
-                </div>
-                <div className=" col-span-6">
-                  <h2 className=" text-base font-medium font-titleFont hover:underline hover:text-primaryColor">
-                    {product.title}
-                  </h2>
-                  <div className=" mt-1 flex items-center gap-2">
-                    <span className=" text-primaryColor font-semibold text-lg">
-                      {product.newPrice}
-                    </span>
-                    <span className=" line-through text-sm">
-                      {product.prevPrice}
-                    </span>
-                  </div>
-                  <div className=" flex items-center gap-2 mt-2 text-[#666666]">
-                    <TbCopyPlusFilled className=" text-xl" />
-                    <span className=" text-xs">Add to Compare</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <RecentlyViewed product={product} />
           </div>
         </div>
       </div>
