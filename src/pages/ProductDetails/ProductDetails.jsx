@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import products from "../../db/data";
 import { useParams } from "react-router-dom";
 import { FaMinus } from "react-icons/fa6";
@@ -16,6 +16,12 @@ const ProductDetails = () => {
   if (!product) {
     return <h1>Product Not Found</h1>;
   }
+
+  const [selectedValue, setSelectedValue] = useState("");
+
+  const handleChange = (value) => {
+    setSelectedValue(value);
+  };
 
   return (
     <>
@@ -62,13 +68,25 @@ const ProductDetails = () => {
                       Payment Options
                     </h3>
                     <div className=" lg:grid lg:grid-cols-2 lg:gap-5 grid gap-3 mt-3">
-                      <div className=" border py-2 px-3 flex items-center gap-4">
-                        <input
-                          type="radio"
-                          name=""
-                          id=""
-                          className=" w-5 h-5"
-                        />
+                      <div
+                        onClick={() => handleChange("option1")}
+                        className={` border rounded cursor-pointer transition py-2 px-3 flex items-center gap-4 ${
+                          selectedValue === "option1"
+                            ? "border-blue-500"
+                            : "border-gray-300"
+                        }`}
+                      >
+                        <label htmlFor="">
+                          <input
+                            type="radio"
+                            name="options"
+                            id=""
+                            value="option1"
+                            checked={selectedValue === "option1"}
+                            className=" w-5 h-5"
+                            onChange={() => handleChange("option1")}
+                          />
+                        </label>
                         <div className=" flex flex-col gap-1">
                           <div className=" flex gap-3 items-center">
                             <span className=" text-xl font-bold">
@@ -88,13 +106,25 @@ const ProductDetails = () => {
                           </div>
                         </div>
                       </div>
-                      <div className=" border py-2 px-3 flex items-center gap-4">
-                        <input
-                          type="radio"
-                          name=""
-                          id=""
-                          className=" w-5 h-5"
-                        />
+                      <div
+                        onClick={() => handleChange("option2")}
+                        className={` border rounded cursor-pointer transition py-2 px-3 flex items-center gap-4 ${
+                          selectedValue === "option2"
+                            ? "border-blue-500"
+                            : "border-gray-300"
+                        }`}
+                      >
+                        <label htmlFor="">
+                          <input
+                            type="radio"
+                            name="options"
+                            id=""
+                            value="option2"
+                            checked={selectedValue === "option2"}
+                            className=" w-5 h-5"
+                            onChange={() => handleChange("option2")}
+                          />
+                        </label>
                         <div className=" flex flex-col gap-1">
                           <div className=" flex gap-3 items-center">
                             <span className=" text-xl font-bold">
@@ -163,7 +193,7 @@ const ProductDetails = () => {
                   offset={-50}
                   activeClass="active"
                   className=" inline-block py-2
-                  hover:bg-primaryDark hover:text-white px-6 bg-white shadow
+                  hover:bg-primaryDark active:bg-primaryDark hover:text-white px-6 bg-white shadow
                   rounded"
                 >
                   <span className=" font-medium">Description</span>
@@ -171,19 +201,21 @@ const ProductDetails = () => {
 
                 <Link
                   to="questions"
+                  activeClass="active"
                   smooth={true}
                   duration={500}
                   offset={-50}
-                  className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded"
+                  className=" inline-block py-2 hover:bg-primaryDark active:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded"
                 >
                   <span className=" font-medium">Questions(0)</span>
                 </Link>
                 <Link
                   to="reviews"
+                  activeClass="active"
                   smooth={true}
                   duration={500}
                   offset={-50}
-                  className=" inline-block py-2 hover:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded"
+                  className=" inline-block py-2 hover:bg-primaryDark active:bg-primaryDark  hover:text-white px-6 bg-white shadow rounded"
                 >
                   <span className=" font-medium">Reviews(0)</span>
                 </Link>
