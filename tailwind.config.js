@@ -22,7 +22,7 @@ export default {
       },
       fontFamily: {
         // bodyFont: ["Poppins", "sans-serif"],
-        titleFont: ["Trebuchet MS", "sans-serif"],
+        titleFont: ["Kanit", "serif"],
       },
 
       fontSize: {
