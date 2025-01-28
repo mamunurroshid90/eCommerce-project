@@ -39,7 +39,7 @@ const SearchBar = () => {
 
   return (
     <>
-      <div className=" bg-bgColor w-full lg:static fixed top-0 left-0 z-10">
+      <div className=" bg-bgColor w-full lg:static fixed top-0 left-0 z-10 font-titleFont">
         <nav className="  max-w-screen-xl mx-auto lg:flex lg:justify-between md:items-center">
           {/* responsive side */}
           <div className=" z-30 py-4 sm:px-3 flex items-center justify-between font-bodyFont p-5 md:w-auto w-full ">

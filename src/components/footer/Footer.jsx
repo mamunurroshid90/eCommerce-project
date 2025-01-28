@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <div className=" bg-bgColor">
+        <div className=" bg-bgColor font-titleFont">
           <div className=" container max-w-screen-xl mx-auto py-10 px-3 ">
             <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 justify-items-center">
               <div className=" flex flex-col gap-5">

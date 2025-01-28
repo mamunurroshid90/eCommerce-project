@@ -30,7 +30,7 @@ const Category = () => {
           isSticky ? "fixed top-0 left-0 w-full z-20 shadow-md" : "relative"
         } `}
       >
-        <div className=" hidden lg:block">
+        <div className=" hidden lg:block font-titleFont">
           <div className=" w-full bg-white">
             <div className=" container max-w-screen-xl flex justify-between items-center gap-2  py-4 shadow px-2 relative">
               {categories.map((category, index) => (

@@ -7,6 +7,7 @@ import FeaturedCategory from "../../components/featuredCategory/FeaturedCategory
 import Services from "../../components/services/Services";
 import MarqueeComp from "../../components/marquee/MarqueeComp";
 import Banner from "../../components/banner/Banner";
+import ShoppingCart from "../shoppingCart/ShoppingCart";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
         <FeaturedCategory />
         <FindStore />
         <FeaturedProducts data={data} />
+        <ShoppingCart />
       </div>
     </>
   );

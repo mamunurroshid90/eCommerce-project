@@ -3,7 +3,7 @@ import React from "react";
 const Registration = () => {
   return (
     <>
-      <div className=" bg-white">
+      <div className=" bg-white font-titleFont">
         <div className=" container flex justify-center items-center h-svh px-container-padding ">
           <div>
             <h3 className=" text-sub-heading">Register Account</h3>

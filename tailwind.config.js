@@ -21,8 +21,8 @@ export default {
         xl: "1280px",
       },
       fontFamily: {
-        bodyFont: ["Poppins", "sans-serif"],
-        titleFont: ["Montserrat", "sans-serif"],
+        // bodyFont: ["Poppins", "sans-serif"],
+        titleFont: ["Trebuchet MS", "sans-serif"],
       },
 
       fontSize: {

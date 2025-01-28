@@ -36,7 +36,7 @@ const ProductDetails = () => {
 
   return (
     <>
-      <div className=" bg-white shadow">
+      <div className=" bg-white shadow font-titleFont">
         <div className=" container max-w-screen-xl mx-auto lg:pt-7 pt-16 h-fit px-3 ">
           <div>
             {/* key features */}

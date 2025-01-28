@@ -21,7 +21,7 @@ const FeaturedProducts = ({ data }) => {
 
   return (
     <>
-      <div>
+      <div className=" font-titleFont">
         <h1 className=" text-center text-section-heading font-bold font-titleFont">
           Featured Products
         </h1>
