@@ -11,9 +11,9 @@ const ShoppingCart = () => {
             Shopping Cart
           </h2>
           <div className=" mt-5">
-            <div className=" w-full">
-              <table class="table-auto w-full">
-                <thead>
+            <div className=" w-full overflow-x-auto">
+              <table class="table-auto min-w-full">
+                <thead className=" flex flex-wrap">
                   <tr className=" text-[13px] font-semibold text-[#666666]">
                     <th className=" bg-[#f5f7f9] py-2 px-4 text-start">
                       Image
@@ -72,7 +72,7 @@ const ShoppingCart = () => {
                   </tr>
                 </tbody>
               </table>
-              <div className=" flex justify-end mt-5">
+              <div className=" flex lg:justify-end justify-center mt-5">
                 <div className=" max-w-80">
                   <table className=" table-auto">
                     <tbody className="">
@@ -101,9 +101,40 @@ const ShoppingCart = () => {
                 Choose if you have a discount code or reward points you want to
                 use or would like to estimate your delivery cost.
               </p>
-              <div>
-                <div></div>
-                <div></div>
+              <div className=" grid lg:grid-cols-2 gap-4 p-5 bg-[#f1f5f9] rounded mt-3">
+                <div className=" lg:flex flex flex-col lg:items-center lg:gap-2 gap-5">
+                  <input
+                    type="text"
+                    placeholder="Promo / coupon"
+                    className=" flex flex-grow shrink basis-auto py-2 px-3 rounded outline-none border border-[#ddd]"
+                  />
+                  <button className=" lg:py-2 py-2 rounded border-2 border-blueColor font-bodyFont text-blueColor font-semibold relative overflow-hidden px-6 hover:text-white group">
+                    <span className=" absolute inset-0 bg-gradient-to-t from-blue-700 to-blue-900 transition-all duration-300 ease-out transform -translate-y-full group-hover:translate-y-0"></span>
+                    <span className=" relative z-10">Apply Coupon</span>
+                  </button>
+                </div>
+                <div className=" lg:flex flex flex-col lg:items-center lg:gap-2 gap-5">
+                  <input
+                    type="text"
+                    placeholder="Promo / coupon"
+                    className=" flex flex-grow shrink basis-auto py-2 px-3 rounded outline-none border border-[#ddd]"
+                  />
+                  <button className=" lg:py-2 py-2 rounded border-2 border-blueColor font-bodyFont text-blueColor font-semibold relative overflow-hidden px-6 hover:text-white group">
+                    <span className=" absolute inset-0 bg-gradient-to-t from-blue-700 to-blue-900 transition-all duration-300 ease-out transform -translate-y-full group-hover:translate-y-0"></span>
+                    <span className=" relative z-10">Apply Voucher</span>
+                  </button>
+                </div>
+              </div>
+              <div className=" flex justify-between lg:p-5 p-2 mt-3 ">
+                <button className=" lg:py-3 py-2 rounded-md bg-blueColor text-white font-semibold relative overflow-hidden px-6 group">
+                  <span className=" absolute inset-0 bg-gradient-to-t from-blue-700 to-blue-900 transition-all duration-300 ease-out transform -translate-y-full group-hover:translate-y-0"></span>
+                  <span className=" relative z-10">Continue Shopping</span>
+                </button>
+
+                <button className=" lg:py-3 py-2 rounded-md bg-blueColor text-white font-semibold relative overflow-hidden px-6 group">
+                  <span className=" absolute inset-0 bg-gradient-to-t from-blue-700 to-blue-900 transition-all duration-300 ease-out transform -translate-y-full group-hover:translate-y-0"></span>
+                  <span className=" relative z-10">Confirm Order</span>
+                </button>
               </div>
             </div>
           </div>
