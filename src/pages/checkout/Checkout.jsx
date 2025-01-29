@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const Checkout = () => {
+  const [selectedOption, setSelectedOption] = useState("");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -11,8 +12,8 @@ const Checkout = () => {
     state: "",
     zipCode: "",
     country: "",
-    zone: "", // New field for Zone
-    notes: "", // New field for Notes
+    zone: "",
+    notes: "",
   });
 
   const handleChange = (e) => {
@@ -187,13 +188,138 @@ const Checkout = () => {
                 </form>
               </div>
             </div>
-            <div className=" col-span-8 bg-slate-700">
-              <div className=" grid grid-cols-12 gap-4">
-                <div className=" bg-orange-400 col-span-6">
-                  <h3>2 Payment Method</h3>
+            <div className=" col-span-8">
+              <div className=" grid grid-cols-12 gap-4 px-3 pb-5">
+                <div className=" bg-white shadow col-span-6 p-4 rounded">
+                  <h3 className=" flex items-center gap-2 border-b pb-3 ">
+                    <span className=" w-6 h-6 rounded-full text-[#F44336] bg-[#fff1f0] flex justify-center items-center font-bold">
+                      2
+                    </span>
+                    <span className=" text-lg font-bold">Payment Method</span>
+                  </h3>
+                  <div>
+                    <h4 className=" py-3 font-semibold text-base">
+                      Select a Payment Method
+                    </h4>
+                    <div className=" flex flex-col gap-1">
+                      <div>
+                        <label className=" flex items-center gap-2 text-base font-medium">
+                          <input
+                            type="radio"
+                            name="options"
+                            value="option1"
+                            checked={selectedOption === "option1"}
+                            onChange={(e) => setSelectedOption(e.target.value)}
+                            className=" w-4 h-4"
+                          />
+                          Cash On Delevery
+                        </label>
+                      </div>
+                      <div>
+                        <label className=" flex items-center gap-2 text-base font-medium">
+                          <input
+                            type="radio"
+                            name="options"
+                            value="option2"
+                            checked={selectedOption === "option2"}
+                            onChange={(e) => setSelectedOption(e.target.value)}
+                            className=" w-4 h-4"
+                          />
+                          Online Payment
+                        </label>
+                      </div>
+                      <div>
+                        <label className=" flex items-center gap-2 text-base font-medium">
+                          <input
+                            type="radio"
+                            name="options"
+                            value="option3"
+                            checked={selectedOption === "option3"}
+                            onChange={(e) => setSelectedOption(e.target.value)}
+                            className=" w-4 h-4"
+                          />
+                          POS On Delivery
+                        </label>
+                      </div>
+                    </div>
+
+                    {/* <p>Selected: {selectedOption}</p> */}
+
+                    <div className=" mt-5">
+                      <p className=" font-bold">We Accept: </p>
+                      <p className=" flex flex-wrap items-center gap-4 mt-2">
+                        <span className=" border border-blueColor p-2 rounded text-blueColor font-bold text-sm">
+                          Cash on Delivery
+                        </span>
+
+                        <span className=" border border-blueColor p-2 rounded text-blueColor font-bold text-sm">
+                          Bkash
+                        </span>
+                        <span className=" border border-blueColor p-2 rounded text-blueColor font-bold text-sm">
+                          Nagad
+                        </span>
+                        <span className=" border border-blueColor p-2 rounded text-blueColor font-bold text-sm">
+                          DBBL
+                        </span>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className=" bg-orange-400 col-span-6">
-                  <h3>3 Delivery Method</h3>
+                <div className=" bg-white shadow col-span-6 p-4 rounded">
+                  <h3 className=" flex items-center gap-2 border-b pb-3 ">
+                    <span className=" w-6 h-6 rounded-full text-[#F44336] bg-[#fff1f0] flex justify-center items-center font-bold">
+                      3
+                    </span>
+                    <span className=" text-lg font-bold">Delivery Method</span>
+                  </h3>
+                  <div>
+                    <h4 className=" py-3 font-semibold text-base">
+                      Select a Delivery Method
+                    </h4>
+                    <div className=" flex flex-col gap-1">
+                      <div>
+                        <label className=" flex items-center gap-2 text-base font-medium">
+                          <input
+                            type="radio"
+                            name="options"
+                            value="option1"
+                            checked={selectedOption === "option1"}
+                            onChange={(e) => setSelectedOption(e.target.value)}
+                            className=" w-4 h-4"
+                          />
+                          Home Delivery - 60৳
+                        </label>
+                      </div>
+                      <div>
+                        <label className=" flex items-center gap-2 text-base font-medium">
+                          <input
+                            type="radio"
+                            name="options"
+                            value="option2"
+                            checked={selectedOption === "option2"}
+                            onChange={(e) => setSelectedOption(e.target.value)}
+                            className=" w-4 h-4"
+                          />
+                          Store Pickup - 0৳
+                        </label>
+                      </div>
+                      <div>
+                        <label className=" flex items-center gap-2 text-base font-medium">
+                          <input
+                            type="radio"
+                            name="options"
+                            value="option3"
+                            checked={selectedOption === "option3"}
+                            onChange={(e) => setSelectedOption(e.target.value)}
+                            className=" w-4 h-4"
+                          />
+                          Request Express - Charge Applicable
+                        </label>
+                      </div>
+                    </div>
+
+                    {/* <p>Selected: {selectedOption}</p> */}
+                  </div>
                 </div>
               </div>
               <div>Apply</div>
