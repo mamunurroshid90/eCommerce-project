@@ -8,6 +8,7 @@ import Services from "../../components/services/Services";
 import MarqueeComp from "../../components/marquee/MarqueeComp";
 import Banner from "../../components/banner/Banner";
 import ShoppingCart from "../shoppingCart/ShoppingCart";
+import Checkout from "../checkout/Checkout";
 
 const Home = () => {
   return (
@@ -19,7 +20,8 @@ const Home = () => {
         <FeaturedCategory />
         <FindStore />
         <FeaturedProducts data={data} />
-        <ShoppingCart />
+        {/* <ShoppingCart /> */}
+        <Checkout />
       </div>
     </>
   );
