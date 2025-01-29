@@ -12,81 +12,89 @@ const ShoppingCart = () => {
           </h2>
           <div className=" mt-5">
             <div className=" w-full overflow-x-auto">
-              <table class="table-auto min-w-full">
-                <thead className=" flex flex-wrap">
-                  <tr className=" text-[13px] font-semibold text-[#666666]">
-                    <th className=" bg-[#f5f7f9] py-2 px-4 text-start">
-                      Image
-                    </th>
-                    <th className=" bg-[#f5f7f9] py-2 px-4 text-start">
-                      Product Name
-                    </th>
-                    <th className=" bg-[#f5f7f9] py-2 px-4 text-start">
-                      Model
-                    </th>
-                    <th className=" bg-[#f5f7f9] py-2 px-4 text-start">
-                      Quantity
-                    </th>
-                    <th className=" bg-[#f5f7f9] py-2 px-4 text-start">
-                      Unit Price
-                    </th>
-                    <th className=" bg-[#f5f7f9] py-2 px-4 text-start">
-                      Total
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className=" w-20 h-14 bg-slate-400 flex justify-center items-center p-3">
-                      Image
-                    </td>
-                    <td className=" p-3">
-                      AOC AGON PRO PD49 PORSCHE DESIGN 49" 240Hz 0.3ms 5K
-                      DUAL-QHD QD-OLED Gaming Curved Monitor
-                    </td>
-                    <td className=" p-3">AGON PRO PD49</td>
-                    <td className=" flex items-center gap-2 p-3 ">
-                      <div className=" max-w-48">
-                        <input
-                          type="text"
-                          value={1}
-                          size={1}
-                          className=" w-full h-10 outline-none px-4 py-1 rounded border border-[#ddd]"
-                        />
-                      </div>
-                      <span>
-                        <MdOutlineCached
-                          className=" text-xl cursor-pointer"
-                          title="Update"
-                        />
-                      </span>
-                      <span>
-                        <RxCross2
-                          className=" text-xl cursor-pointer"
-                          title="remove"
-                        />
-                      </span>
-                    </td>
-                    <td className=" p-3">215,000৳</td>
-                    <td className=" p-3">215,000৳</td>
-                  </tr>
-                </tbody>
-              </table>
-              <div className=" flex lg:justify-end justify-center mt-5">
+              <div className="overflow-x-auto">
+                <table className="min-w-full bg-white rounded-lg shadow-sm md:table">
+                  <thead className="bg-[#f5f7f9]">
+                    <tr className="flex flex-col md:table-row">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-[#666] capitalize tracking-wider md:table-cell">
+                        Image
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-[#666] capitalize tracking-wider md:table-cell">
+                        Product Name
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-[#666] capitalize tracking-wider md:table-cell">
+                        Model
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-[#666] capitalize tracking-wider md:table-cell">
+                        Quantity
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-[#666] capitalize tracking-wider md:table-cell">
+                        Unit Price
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-[#666] capitalize tracking-wider md:table-cell">
+                        Total
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y">
+                    <tr className="flex flex-col md:table-row">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 md:table-cell">
+                        <div className=" max-w-20 h-auto">
+                          <img
+                            src=""
+                            alt="product-img"
+                            className=" w-full h-full bg-slate-500"
+                          />
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm md:table-cell">
+                        AMD Ryzen 5 8500G Desktop PC
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm md:table-cell">
+                        Ryzen 5 8500G Desktop PC
+                      </td>
+                      <td className=" px-6 py-4 whitespace-nowrap text-sm md:table-cell">
+                        <div className=" flex items-center gap-2">
+                          <input
+                            type="text"
+                            value={1}
+                            className=" max-w-14 py-1 px-3 outline-none border border-[#ddd] cursor-pointer"
+                          />
+                          <span>
+                            <MdOutlineCached className=" text-lg cursor-pointer" />
+                          </span>
+                          <span>
+                            <RxCross2 className=" text-lg cursor-pointer" />
+                          </span>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm md:table-cell">
+                        38,499৳
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm md:table-cell">
+                        38,499৳
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className=" flex lg:justify-end justify-start my-5">
                 <div className=" max-w-80">
                   <table className=" table-auto">
                     <tbody className="">
                       <tr className=" py-1 px-2 border-b border-[#ddd]">
-                        <td className=" text-lg font-bold pr-10 py-2">
+                        <td className=" text-base font-bold pr-10 py-2">
                           Sub-Total
                         </td>
-                        <td className=" py-2 text-lg font-bold text-primaryColor">
+                        <td className=" py-2 text-base font-bold text-primaryColor">
                           215,000৳
                         </td>
                       </tr>
                       <tr className=" py-1 px-2 border-b border-[#ddd]">
-                        <td className=" text-lg font-bold pr-10 py-2">Total</td>
-                        <td className=" py-2 text-lg font-bold text-primaryColor">
+                        <td className=" text-base font-bold pr-10 py-2">
+                          Total
+                        </td>
+                        <td className=" py-2 text-base font-bold text-primaryColor">
                           215,000৳
                         </td>
                       </tr>
@@ -94,15 +102,15 @@ const ShoppingCart = () => {
                   </table>
                 </div>
               </div>
-              <h3 className=" text-xl font-semibold">
+              <h3 className=" lg:text-xl text-lg font-semibold">
                 What would you like to do next?
               </h3>
-              <p className=" text-lg">
+              <p className=" lg:text-base text-sm">
                 Choose if you have a discount code or reward points you want to
                 use or would like to estimate your delivery cost.
               </p>
               <div className=" grid lg:grid-cols-2 gap-4 p-5 bg-[#f1f5f9] rounded mt-3">
-                <div className=" lg:flex flex flex-col lg:items-center lg:gap-2 gap-5">
+                <div className=" lg:flex flex lg:flex-row flex-col lg:items-center lg:gap-2 gap-5">
                   <input
                     type="text"
                     placeholder="Promo / coupon"
@@ -126,12 +134,12 @@ const ShoppingCart = () => {
                 </div>
               </div>
               <div className=" flex justify-between lg:p-5 p-2 mt-3 ">
-                <button className=" lg:py-3 py-2 rounded-md bg-blueColor text-white font-semibold relative overflow-hidden px-6 group">
+                <button className=" lg:py-3 py-2 rounded-md bg-blueColor text-white font-semibold relative overflow-hidden px-4 lg:px-6 group">
                   <span className=" absolute inset-0 bg-gradient-to-t from-blue-700 to-blue-900 transition-all duration-300 ease-out transform -translate-y-full group-hover:translate-y-0"></span>
                   <span className=" relative z-10">Continue Shopping</span>
                 </button>
 
-                <button className=" lg:py-3 py-2 rounded-md bg-blueColor text-white font-semibold relative overflow-hidden px-6 group">
+                <button className=" lg:py-3 py-2 rounded-md bg-blueColor text-white font-semibold relative overflow-hidden px-4 lg:px-6 group">
                   <span className=" absolute inset-0 bg-gradient-to-t from-blue-700 to-blue-900 transition-all duration-300 ease-out transform -translate-y-full group-hover:translate-y-0"></span>
                   <span className=" relative z-10">Confirm Order</span>
                 </button>
