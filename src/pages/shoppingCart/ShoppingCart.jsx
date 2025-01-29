@@ -121,7 +121,7 @@ const ShoppingCart = () => {
                     <span className=" relative z-10">Apply Coupon</span>
                   </button>
                 </div>
-                <div className=" lg:flex flex flex-col lg:items-center lg:gap-2 gap-5">
+                <div className=" lg:flex flex lg:flex-row flex-col  lg:items-center lg:gap-2 gap-5">
                   <input
                     type="text"
                     placeholder="Promo / coupon"
