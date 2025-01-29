@@ -21,7 +21,7 @@ const Home = () => {
         <FindStore />
         <FeaturedProducts data={data} />
         {/* <ShoppingCart /> */}
-        <Checkout />
+        {/* <Checkout /> */}
       </div>
     </>
   );
