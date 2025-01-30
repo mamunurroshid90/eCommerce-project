@@ -1,5 +1,4 @@
 import React from "react";
-import FeaturedProducts from "../../components/featuredProducts/FeaturedProducts";
 import { bannerData } from "../../db/bannerData";
 import data from "../../db/data";
 import FindStore from "../../components/findStore/FindStore";
@@ -9,6 +8,8 @@ import MarqueeComp from "../../components/marquee/MarqueeComp";
 import Banner from "../../components/banner/Banner";
 import ShoppingCart from "../shoppingCart/ShoppingCart";
 import Checkout from "../checkout/Checkout";
+import AddToCart from "../../components/addToCart/AddToCart";
+import ProductList from "../ProductsLists/ProductList";
 
 const Home = () => {
   return (
@@ -19,9 +20,11 @@ const Home = () => {
         <MarqueeComp />
         <FeaturedCategory />
         <FindStore />
-        <FeaturedProducts data={data} />
+
+        <ProductList data={data} />
         {/* <ShoppingCart /> */}
         {/* <Checkout /> */}
+        <AddToCart />
       </div>
     </>
   );
