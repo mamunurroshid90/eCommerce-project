@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import FeaturedProductsCart from "../../components/featuredProducts/FeaturedProductsCart";
+import React, { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
+import ProductCart from "../../components/productCart/ProductCart";
 
-const ProductList = ({ data }) => {
+const ProductList = ({ productData }) => {
   const itemsPerPage = 20;
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
-    setCurrentItems(data.slice(itemOffset, endOffset)); // Get items for the current page
-    setPageCount(Math.ceil(data.length / itemsPerPage)); // Calculate total pages
-  }, [itemOffset, itemsPerPage, data]);
+    setCurrentItems(productData.slice(itemOffset, endOffset)); // Get items for the current page
+    setPageCount(Math.ceil(productData.length / itemsPerPage)); // Calculate total pages
+  }, [itemOffset, itemsPerPage, productData]);
 
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % data.length;
+    const newOffset = (event.selected * itemsPerPage) % productData.length;
     setItemOffset(newOffset);
   };
   return (
@@ -28,34 +28,9 @@ const ProductList = ({ data }) => {
           Check & Get Your Desired Product!
         </h5>
         <div className=" px-container-padding grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 pb-10 pt-7">
-          {currentItems.map(
-            ({
-              id,
-              img,
-              title,
-              star,
-              reviews,
-              prevPrice,
-              newPrice,
-              company,
-              color,
-              category,
-            }) => (
-              <FeaturedProductsCart
-                key={Math.random}
-                id={id}
-                img={img}
-                title={title}
-                star={star}
-                reviews={reviews}
-                prevPrice={prevPrice}
-                newPrice={newPrice}
-                company={company}
-                color={color}
-                category={category}
-              />
-            )
-          )}
+          {currentItems.map((productData) => (
+            <ProductCart key={Math.random} productData={productData} />
+          ))}
         </div>
         {/* Pagination */}
         <ReactPaginate

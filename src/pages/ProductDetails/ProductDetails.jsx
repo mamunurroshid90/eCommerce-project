@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import products from "../../db/data";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { FaMinus } from "react-icons/fa6";
 import { FiPlus } from "react-icons/fi";
 import { RiMessage2Fill } from "react-icons/ri";
@@ -8,11 +8,22 @@ import { MdAssignment } from "react-icons/md";
 import { Link } from "react-scroll";
 import RelatedProducts from "../../components/relatedProducts/RelatedProducts";
 import RecentlyViewed from "../../components/recentlyViewed/RecentlyViewed";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/cart/cartSlice";
 
 const ProductDetails = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const { id } = useParams();
   const product = products.find((pItem) => pItem.id === parseInt(id));
+  console.log(product);
   const [productCount, setProductCount] = useState(1);
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+    navigate("/cart");
+  };
 
   const handleIncrease = () => {
     setProductCount(productCount + 1);
@@ -189,7 +200,10 @@ const ProductDetails = () => {
                       </label>
                     </div>
                     <div>
-                      <button className=" py-3 lg:min-w-[200px] min-w-[100px] rounded-md bg-blue-700 text-white font-semibold relative overflow-hidden px-6 group">
+                      <button
+                        onClick={handleAddToCart}
+                        className=" py-3 lg:min-w-[200px] min-w-[100px] rounded-md bg-blue-700 text-white font-semibold relative overflow-hidden px-6 group"
+                      >
                         <span className=" absolute inset-0 bg-gradient-to-t from-blue-700 to-blue-900 transition-all duration-300 ease-out transform -translate-y-full group-hover:translate-y-0"></span>
                         <span className=" relative z-10 text-sm font-semibold">
                           Buy Now
