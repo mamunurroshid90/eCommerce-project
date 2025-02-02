@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RxCross2, RxCrossCircled } from "react-icons/rx";
 import { clearCart, removeFromCart } from "../../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 import { MdDeleteForever } from "react-icons/md";
 
-const CartPage = () => {
+const CartPage = ({ onClose }) => {
   const cartItems = useSelector((state) => state.cart.items);
   console.log("cart items", cartItems);
   const dispatch = useDispatch();
@@ -43,14 +43,47 @@ const CartPage = () => {
     navigate(-1); // Go back to the previous page
   };
 
+  // Reference to the cart sidebar
+  const cartRef = useRef(null);
+
+  // Close the cart when clicking outside of it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (cartRef.current && !cartRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+
+    // Attach the event listener
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Clean up the event listener
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [onClose]);
+
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-end">
+    <div className="fixed inset-0  flex justify-end">
       {/* Sidebar Cart */}
-      <div className="w-[400px] bg-white h-full shadow-lg p-5 relative">
+      <div
+        ref={cartRef}
+        className="w-[400px] bg-white h-full shadow-lg p-5 relative"
+      >
+        {/* Clear Cart Button */}
+        <button
+          title="clear cart"
+          onClick={clearProductCart}
+          className=" absolute left-2 top-2 p-2 flex items-center justify-center gap-1 bg-red-500 text-white rounded hover:bg-red-600"
+        >
+          <RxCrossCircled className="text-xl" />
+        </button>
+
         {/* Close Button */}
         <button
-          onClick={closeCart}
-          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+          title="close cart"
+          onClick={onClose}
+          className="absolute top-2 right-2 text-gray-500 hover:text-gray-900 hover:bg-slate-400 rounded-full"
         >
           <RxCross2 className="text-xl" />
         </button>
@@ -61,23 +94,23 @@ const CartPage = () => {
         ) : (
           <>
             {/* Product List */}
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col justify-between gap-3 min-h-96">
               {cartItems.map((item) => (
                 <div
                   key={item.id}
                   className="flex justify-between items-center"
                 >
-                  <div className="text-gray-600">
-                    <div className=" w-20 h-6">
+                  <div className="text-gray-600 flex items-center gap-4">
+                    <div className=" w-16">
                       <img
                         src={item.img}
                         alt="image"
                         className=" w-full h-full"
                       />
                     </div>
-                    <div>
-                      <h5>{item.title}</h5>
-                      <div>
+                    <div className=" flex flex-col gap-1">
+                      <h5 className=" text-sm font-bold">{item.title}</h5>
+                      <div className=" text-base font-bold">
                         <span>${item.newPrice}</span>
                         <span> x </span>
                         <span>{item.count}</span>
@@ -98,28 +131,44 @@ const CartPage = () => {
 
             {/* Subtotal and Total */}
             <div className="mt-4 border-t pt-4">
-              <p className="text-gray-600">
-                Subtotal: ${calculateSubtotal().toFixed(2)}
-              </p>
-              <p className="text-gray-600">
-                Tax (10%): ${(calculateSubtotal() * 0.1).toFixed(2)}
-              </p>
-              <p className="text-gray-600">Shipping: $10.00</p>
-              <p className="text-lg font-bold mt-2">
-                Total: ${calculateTotal().toFixed(2)}
-              </p>
+              <div className=" flex items-center justify-between border-b py-2">
+                <div className="text-xl text-[#4e4e4e] text-end w-1/2">
+                  Subtotal
+                </div>
+                <div className=" w-1/2 text-end text-xl font-bold">
+                  ${calculateSubtotal().toFixed(2)}
+                </div>
+              </div>
+              <div className=" flex items-center justify-between border-b py-2">
+                <div className="text-xl text-[#4e4e4e] text-end w-1/2">
+                  Tax (10%){" "}
+                </div>
+                <div className=" w-1/2 text-end text-xl font-bold">
+                  ${(calculateSubtotal() * 0.1).toFixed(2)}
+                </div>
+              </div>
+              <div className=" flex items-center justify-between border-b py-2">
+                <div className="text-xl text-[#4e4e4e] text-end w-1/2">
+                  Shipping
+                </div>
+                <div className=" w-1/2 text-end text-xl font-bold">$10.00</div>
+              </div>
+              <div className=" flex items-center justify-between border-b py-2">
+                <div className="text-xl text-[#4e4e4e] text-end w-1/2">
+                  Total
+                </div>
+                <div className=" w-1/2 text-end text-xl font-bold">
+                  ${calculateTotal().toFixed(2)}
+                </div>
+              </div>
             </div>
-
-            {/* Clear Cart Button */}
-            <button
-              onClick={clearProductCart}
-              className="mt-4 p-2 w-full flex items-center justify-center gap-1 bg-red-500 text-white rounded hover:bg-red-600"
-            >
-              <RxCrossCircled className="text-xl" />
-              <span className="font-semibold">Clear Cart</span>
-            </button>
           </>
         )}
+        <div className=" w-full bg-primaryColor py-2 flex justify-center rounded">
+          <button className=" text-base font-semibold text-white">
+            Checkout
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -4,17 +4,28 @@ import Home from "./pages/Home/Home.jsx";
 import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
 import PageNotFount from "./pages/pageNotFound/PageNotFound.jsx";
 import CartPage from "./components/cartPage/CartPage.jsx";
+import { useState } from "react";
 
 function App() {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
   return (
     <>
       <Routes>
         <Route element={<RouteLayout />}>
+          <Route
+            path="/products/:id"
+            element={
+              <ProductDetails isCartOpen={isCartOpen} toggleCart={toggleCart} />
+            }
+          />
           <Route path="/" element={<Home />} />
-          <Route path="/products/:id" element={<ProductDetails />} />
-          <Route path="/cart" element={<CartPage />} />
           <Route path="*" element={<PageNotFount />} />
         </Route>
+        {isCartOpen && <CartPage onClose={toggleCart} />}
       </Routes>
     </>
   );

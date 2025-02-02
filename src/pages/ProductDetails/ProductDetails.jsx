@@ -11,9 +11,8 @@ import RecentlyViewed from "../../components/recentlyViewed/RecentlyViewed";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/cart/cartSlice";
 
-const ProductDetails = () => {
+const ProductDetails = ({ isCartOpen, toggleCart }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const { id } = useParams();
   const product = products.find((pItem) => pItem.id === parseInt(id));
@@ -22,7 +21,7 @@ const ProductDetails = () => {
 
   const handleAddToCart = () => {
     dispatch(addToCart({ product, count: productCount })); // Pass product and count
-    navigate("/cart");
+    toggleCart();
   };
 
   const handleIncrease = () => {
