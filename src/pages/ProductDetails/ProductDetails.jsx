@@ -21,7 +21,7 @@ const ProductDetails = () => {
   const [productCount, setProductCount] = useState(1);
 
   const handleAddToCart = () => {
-    dispatch(addToCart(product));
+    dispatch(addToCart({ product, count: productCount })); // Pass product and count
     navigate("/cart");
   };
 
@@ -82,7 +82,10 @@ const ProductDetails = () => {
                   <p className=" lg:text-base text-sm font-medium font-bodyFont">
                     Features: {product.features}
                   </p>
-                  <Link className=" text-primaryDark border-b border-b-primaryDark inline w-fit capitalize lg:text-base text-sm font-bodyFont">
+                  <Link
+                    to="#"
+                    className=" text-primaryDark border-b border-b-primaryDark inline w-fit capitalize lg:text-base text-sm font-bodyFont"
+                  >
                     view more info
                   </Link>
                   <div className=" mt-4">

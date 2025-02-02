@@ -3,11 +3,33 @@ import { useDispatch, useSelector } from "react-redux";
 import { RxCross2, RxCrossCircled } from "react-icons/rx";
 import { clearCart, removeFromCart } from "../../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
+import { MdDeleteForever } from "react-icons/md";
 
 const CartPage = () => {
   const cartItems = useSelector((state) => state.cart.items);
+  console.log("cart items", cartItems);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const calculateSubtotal = () => {
+    return cartItems.reduce(
+      (total, item) => total + item.newPrice * item.count,
+      0
+    );
+  };
+
+  // Calculate Total (including tax and shipping)
+  const calculateTotal = () => {
+    const subtotal = calculateSubtotal();
+    const tax = subtotal * 0.1; // Example tax (10%)
+    const shipping = 10; // Example shipping cost
+    return subtotal + tax + shipping;
+  };
+
+  // Calculate total for a single item
+  const calculateItemTotal = (item) => {
+    return item.newPrice * item.count;
+  };
 
   const removeProductFromCart = (id) => {
     dispatch(removeFromCart(id));
@@ -24,7 +46,7 @@ const CartPage = () => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-end">
       {/* Sidebar Cart */}
-      <div className="w-[300px] bg-white h-full shadow-lg p-5 relative">
+      <div className="w-[400px] bg-white h-full shadow-lg p-5 relative">
         {/* Close Button */}
         <button
           onClick={closeCart}
@@ -45,18 +67,48 @@ const CartPage = () => {
                   key={item.id}
                   className="flex justify-between items-center"
                 >
-                  <li className="text-gray-600">
-                    {item.title} - ${item.newPrice}
-                  </li>
+                  <div className="text-gray-600">
+                    <div className=" w-20 h-6">
+                      <img
+                        src={item.img}
+                        alt="image"
+                        className=" w-full h-full"
+                      />
+                    </div>
+                    <div>
+                      <h5>{item.title}</h5>
+                      <div>
+                        <span>${item.newPrice}</span>
+                        <span> x </span>
+                        <span>{item.count}</span>
+                        <span> = </span>
+                        <span>${calculateItemTotal(item).toFixed(2)}</span>
+                      </div>
+                    </div>
+                  </div>
                   <button
                     onClick={() => removeProductFromCart(item.id)}
                     className="text-red-500 hover:text-red-700"
                   >
-                    <RxCross2 />
+                    <MdDeleteForever className=" text-2xl" />
                   </button>
                 </div>
               ))}
             </ul>
+
+            {/* Subtotal and Total */}
+            <div className="mt-4 border-t pt-4">
+              <p className="text-gray-600">
+                Subtotal: ${calculateSubtotal().toFixed(2)}
+              </p>
+              <p className="text-gray-600">
+                Tax (10%): ${(calculateSubtotal() * 0.1).toFixed(2)}
+              </p>
+              <p className="text-gray-600">Shipping: $10.00</p>
+              <p className="text-lg font-bold mt-2">
+                Total: ${calculateTotal().toFixed(2)}
+              </p>
+            </div>
 
             {/* Clear Cart Button */}
             <button
