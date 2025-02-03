@@ -93,7 +93,11 @@ const CartPage = ({ onClose }) => {
 
         <div className=" flex flex-col justify-between h-[90%]">
           {cartItems.length === 0 ? (
-            <p className="text-gray-600">Your cart is empty.</p>
+            <div className=" w-full h-32 flex justify-center items-center">
+              <p className="text-gray-600 text-2xl font-bold">
+                Your cart is empty.
+              </p>
+            </div>
           ) : (
             <>
               {/* Product List */}

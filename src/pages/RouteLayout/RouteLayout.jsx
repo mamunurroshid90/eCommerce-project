@@ -5,14 +5,14 @@ import { Outlet } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import CartButton from "../../components/cartButton/CartButton";
 
-const RouteLayout = () => {
+const RouteLayout = ({ toggleCart }) => {
   return (
     <>
       <div>
-        <SearchBar />
+        <SearchBar toggleCart={toggleCart} />
         <Category />
         <Outlet />
-        <CartButton />
+        <CartButton toggleCart={toggleCart} />
         <Footer />
       </div>
     </>

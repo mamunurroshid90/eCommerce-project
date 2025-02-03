@@ -18,7 +18,7 @@ function App() {
       {/* Scroll to the top on route change */}
       <ScrollTop />
       <Routes>
-        <Route element={<RouteLayout />}>
+        <Route element={<RouteLayout toggleCart={toggleCart} />}>
           <Route
             path="/products/:id"
             element={

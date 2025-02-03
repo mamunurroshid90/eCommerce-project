@@ -10,10 +10,12 @@ import { RxCross2 } from "react-icons/rx";
 
 import { Link } from "react-router-dom";
 import ResponsiveNavbar from "../responsiveNavbar/ResponsiveNavbar";
+import { useSelector } from "react-redux";
 
-const SearchBar = () => {
+const SearchBar = ({ toggleCart }) => {
   const [showSearch, setShowSearch] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+  const cartItems = useSelector((state) => state.cart.items);
   const menuRef = useRef(null);
 
   // Function to handle clicks outside the menu
@@ -62,8 +64,15 @@ const SearchBar = () => {
               <div onClick={() => setShowSearch(!showSearch)}>
                 <IoSearch className=" text-2xl text-white" />
               </div>
-              <div>
-                <MdShoppingBasket className=" text-2xl text-white" />
+              <div className=" relative">
+                <button onClick={toggleCart}>
+                  <MdShoppingBasket className=" text-2xl text-white" />
+                </button>
+                {cartItems.length > 0 && (
+                  <span className="absolute -top-3 -right-3 bg-red-500 text-white px-1.5 py-0.5 rounded-full font-semibold text-xs">
+                    {cartItems.length}
+                  </span>
+                )}
               </div>
             </div>
           </div>
