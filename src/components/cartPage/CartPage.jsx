@@ -64,73 +64,80 @@ const CartPage = ({ onClose }) => {
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0  flex justify-end">
+    <div className="fixed inset-0  flex justify-end z-[999999]">
       {/* Sidebar Cart */}
-      <div
-        ref={cartRef}
-        className="w-[400px] bg-white h-full shadow-lg p-5 relative"
-      >
-        {/* Clear Cart Button */}
-        <button
-          title="clear cart"
-          onClick={clearProductCart}
-          className=" absolute left-2 top-2 p-2 flex items-center justify-center gap-1 bg-red-500 text-white rounded hover:bg-red-600"
-        >
-          <RxCrossCircled className="text-xl" />
-        </button>
+      <div ref={cartRef} className="w-[400px] min-h-full shadow-lg bg-slate-50">
+        <div className=" bg-bgColor flex justify-between items-center py-4 px-3">
+          {/* Clear Cart Button */}
+          <button
+            title="clear cart"
+            onClick={clearProductCart}
+            className="  p-2 flex items-center justify-center gap-1 bg-red-500 text-white rounded hover:bg-red-600"
+          >
+            <RxCrossCircled className="text-xl" />
+          </button>
 
-        {/* Close Button */}
-        <button
-          title="close cart"
-          onClick={onClose}
-          className="absolute top-2 right-2 text-gray-500 hover:text-gray-900 hover:bg-slate-400 rounded-full"
-        >
-          <RxCross2 className="text-xl" />
-        </button>
+          <div>
+            <h1 className="text-2xl font-bold text-white">Your Cart</h1>
+          </div>
 
-        <h1 className="text-2xl font-bold mb-4 text-center">Your Cart</h1>
-        {cartItems.length === 0 ? (
-          <p className="text-gray-600">Your cart is empty.</p>
-        ) : (
-          <>
-            {/* Product List */}
-            <ul className="flex flex-col justify-between gap-3 min-h-96">
-              {cartItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex justify-between items-center"
-                >
-                  <div className="text-gray-600 flex items-center gap-4">
-                    <div className=" w-16">
-                      <img
-                        src={item.img}
-                        alt="image"
-                        className=" w-full h-full"
-                      />
-                    </div>
-                    <div className=" flex flex-col gap-1">
-                      <h5 className=" text-sm font-bold">{item.title}</h5>
-                      <div className=" text-base font-bold">
-                        <span>${item.newPrice}</span>
-                        <span> x </span>
-                        <span>{item.count}</span>
-                        <span> = </span>
-                        <span>${calculateItemTotal(item).toFixed(2)}</span>
+          {/* Close Button */}
+          <button
+            title="close cart"
+            onClick={onClose}
+            className=" text-white font-bold hover:text-gray-900 hover:bg-slate-400 rounded-full"
+          >
+            <RxCross2 className="text-2xl" />
+          </button>
+        </div>
+
+        <div className=" flex flex-col justify-between h-[90%]">
+          {cartItems.length === 0 ? (
+            <p className="text-gray-600">Your cart is empty.</p>
+          ) : (
+            <>
+              {/* Product List */}
+              <div className=" overflow-y-auto">
+                <ul className="flex flex-col justify-between gap-3 bg-white shadow  ">
+                  {cartItems.map((item) => (
+                    <div
+                      key={item.id}
+                      className="flex justify-between items-center p-3 min-h-24 "
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className=" w-16">
+                          <img
+                            src={item.img}
+                            alt="image"
+                            className=" w-full h-full"
+                          />
+                        </div>
+                        <div className=" flex flex-col gap-1">
+                          <h5 className=" text-sm font-bold">{item.title}</h5>
+                          <div className=" text-base font-bold">
+                            <span>${item.newPrice}</span>
+                            <span> x </span>
+                            <span>{item.count}</span>
+                            <span> = </span>
+                            <span>${calculateItemTotal(item).toFixed(2)}</span>
+                          </div>
+                        </div>
                       </div>
+                      <button
+                        onClick={() => removeProductFromCart(item.id)}
+                        className="text-red-500 hover:text-red-700"
+                      >
+                        <MdDeleteForever className=" text-2xl" />
+                      </button>
                     </div>
-                  </div>
-                  <button
-                    onClick={() => removeProductFromCart(item.id)}
-                    className="text-red-500 hover:text-red-700"
-                  >
-                    <MdDeleteForever className=" text-2xl" />
-                  </button>
-                </div>
-              ))}
-            </ul>
-
-            {/* Subtotal and Total */}
-            <div className="mt-4 border-t pt-4">
+                  ))}
+                </ul>
+              </div>
+            </>
+          )}
+          {/* Subtotal and Total */}
+          <div>
+            <div className="mt-4 border-t pt-4 px-3 bg-white shadow">
               <div className=" flex items-center justify-between border-b py-2">
                 <div className="text-xl text-[#4e4e4e] text-end w-1/2">
                   Subtotal
@@ -162,12 +169,12 @@ const CartPage = ({ onClose }) => {
                 </div>
               </div>
             </div>
-          </>
-        )}
-        <div className=" w-full bg-primaryColor py-2 flex justify-center rounded">
-          <button className=" text-base font-semibold text-white">
-            Checkout
-          </button>
+            <div className=" w-full bg-primaryColor py-2 flex justify-center rounded">
+              <button className=" text-base font-semibold text-white">
+                Checkout
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

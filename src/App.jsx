@@ -25,8 +25,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="*" element={<PageNotFount />} />
         </Route>
-        {isCartOpen && <CartPage onClose={toggleCart} />}
       </Routes>
+      {isCartOpen && <CartPage onClose={toggleCart} />}
     </>
   );
 }
