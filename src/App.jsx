@@ -5,6 +5,7 @@ import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
 import PageNotFount from "./pages/pageNotFound/PageNotFound.jsx";
 import CartPage from "./components/cartPage/CartPage.jsx";
 import { useState } from "react";
+import ScrollTop from "./components/scrollTop/ScrollTop.jsx";
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -14,6 +15,8 @@ function App() {
   };
   return (
     <>
+      {/* Scroll to the top on route change */}
+      <ScrollTop />
       <Routes>
         <Route element={<RouteLayout />}>
           <Route
