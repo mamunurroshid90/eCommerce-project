@@ -169,11 +169,11 @@ const CartPage = ({ onClose }) => {
                 </div>
               </div>
             </div>
-            <div className=" w-full bg-primaryColor py-2 flex justify-center rounded">
-              <button
-                onClick={() => navigate("/checkout")}
-                className=" text-base font-semibold text-white"
-              >
+            <div
+              onClick={() => navigate("/checkout")}
+              className=" w-full bg-primaryColor py-2 flex justify-center rounded"
+            >
+              <button className=" text-base font-semibold text-white">
                 Checkout
               </button>
             </div>
