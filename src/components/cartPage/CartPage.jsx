@@ -4,6 +4,11 @@ import { RxCross2, RxCrossCircled } from "react-icons/rx";
 import { clearCart, removeFromCart } from "../../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 import { MdDeleteForever } from "react-icons/md";
+import {
+  calculateItemTotal,
+  calculateSubtotal,
+  calculateTotal,
+} from "../../utils/calculations";
 
 const CartPage = ({ onClose }) => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -11,25 +16,25 @@ const CartPage = ({ onClose }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const calculateSubtotal = () => {
-    return cartItems.reduce(
-      (total, item) => total + item.newPrice * item.count,
-      0
-    );
-  };
+  // const calculateSubtotal = () => {
+  //   return cartItems.reduce(
+  //     (total, item) => total + item.newPrice * item.count,
+  //     0
+  //   );
+  // };
 
-  // Calculate Total (including tax and shipping)
-  const calculateTotal = () => {
-    const subtotal = calculateSubtotal();
-    const tax = subtotal * 0.1; // Example tax (10%)
-    const shipping = 10; // Example shipping cost
-    return subtotal + tax + shipping;
-  };
+  // // Calculate Total (including tax and shipping)
+  // const calculateTotal = () => {
+  //   const subtotal = calculateSubtotal();
+  //   const tax = subtotal * 0.1; // Example tax (10%)
+  //   const shipping = 10; // Example shipping cost
+  //   return subtotal + tax + shipping;
+  // };
 
-  // Calculate total for a single item
-  const calculateItemTotal = (item) => {
-    return item.newPrice * item.count;
-  };
+  // // Calculate total for a single item
+  // const calculateItemTotal = (item) => {
+  //   return item.newPrice * item.count;
+  // };
 
   const removeProductFromCart = (id) => {
     dispatch(removeFromCart(id));
@@ -143,7 +148,7 @@ const CartPage = ({ onClose }) => {
                   Subtotal
                 </div>
                 <div className=" w-1/2 text-end text-xl font-bold">
-                  ${calculateSubtotal().toFixed(2)}
+                  ${calculateSubtotal(cartItems).toFixed(2)}
                 </div>
               </div>
               <div className=" flex items-center justify-between border-b py-2">
@@ -151,7 +156,7 @@ const CartPage = ({ onClose }) => {
                   Tax (10%){" "}
                 </div>
                 <div className=" w-1/2 text-end text-xl font-bold">
-                  ${(calculateSubtotal() * 0.1).toFixed(2)}
+                  ${(calculateSubtotal(cartItems) * 0.1).toFixed(2)}
                 </div>
               </div>
               <div className=" flex items-center justify-between border-b py-2">
@@ -165,7 +170,7 @@ const CartPage = ({ onClose }) => {
                   Total
                 </div>
                 <div className=" w-1/2 text-end text-xl font-bold">
-                  ${calculateTotal().toFixed(2)}
+                  ${calculateTotal(cartItems).toFixed(2)}
                 </div>
               </div>
             </div>

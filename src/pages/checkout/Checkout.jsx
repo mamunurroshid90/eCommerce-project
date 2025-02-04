@@ -221,7 +221,8 @@ const Checkout = () => {
                 </form>
               </div>
             </div>
-            {/* Rest of the code remains unchanged */}
+
+            {/* Payment Method */}
             <div className=" lg:col-span-8">
               <div className=" grid lg:grid-cols-12 flex-col gap-4 pb-5">
                 <div className=" bg-white shadow lg:col-span-6 p-4 rounded">
@@ -297,6 +298,8 @@ const Checkout = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* Delivery Method */}
                 <div className=" bg-white shadow lg:col-span-6 p-4 rounded">
                   <h3 className=" flex items-center gap-2 border-b pb-3 ">
                     <span className=" w-6 h-6 rounded-full text-[#F44336] bg-[#fff1f0] flex justify-center items-center font-bold">
@@ -352,6 +355,8 @@ const Checkout = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Coupon and Voucher part */}
               <div className=" lg:flex-row flex flex-col items-center gap-4 w-full bg-white p-5 rounded shadow">
                 <div className="flex flex-col lg:flex-row gap-2 items-center space-x-2 w-full">
                   <input
@@ -374,6 +379,8 @@ const Checkout = () => {
                   </button>
                 </div>
               </div>
+
+              {/* Order Overview */}
               <div className=" mt-5 bg-white px-3 py-5 shadow">
                 <div className="overflow-x-auto w-full">
                   <h3 className="flex items-center gap-2 border-b pb-3">
@@ -460,13 +467,18 @@ const Checkout = () => {
             </div>
           </div>
           <div className=" w-full mt-10 px-2 py-5 border-t border-[#ddd]">
-            <div className=" flex items-center justify-between">
-              <div className=" flex items-center gap-3">
-                <input type="checkbox" name="" id="" className=" w-4 h-4" />
-                <p className=" font-medium flex items-center gap-1 text-base">
+            <div className=" md:flex md:items-center md:justify-between w-full">
+              <div className=" flex items-start gap-2">
+                <input
+                  type="checkbox"
+                  name=""
+                  id=""
+                  className=" w-4 h-4 bg-transparent"
+                />
+                <p className=" font-medium text-base -mt-1 md:flex">
                   I have read and agree to the
                   <a
-                    className=" text-primaryColor hover:underline"
+                    className=" text-primaryColor hover:underline px-1"
                     href="#"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -474,7 +486,7 @@ const Checkout = () => {
                     Terms and Conditions,
                   </a>
                   <a
-                    className=" text-primaryColor hover:underline"
+                    className=" text-primaryColor hover:underline px-1"
                     href="#"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -483,7 +495,7 @@ const Checkout = () => {
                   </a>
                   and
                   <a
-                    className=" text-primaryColor hover:underline"
+                    className=" text-primaryColor hover:underline px-1"
                     href="#"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -492,8 +504,8 @@ const Checkout = () => {
                   </a>
                 </p>
               </div>
-              <div>
-                <button className=" bg-blueColor text-white text-base px-6 py-2 rounded font-semibold">
+              <div className=" mt-3 lg:mt-0">
+                <button className=" bg-blueColor w-full md:w-auto text-white text-base px-6 py-2 rounded font-semibold">
                   Confirm
                 </button>
               </div>
