@@ -6,6 +6,7 @@ import PageNotFount from "./pages/pageNotFound/PageNotFound.jsx";
 import CartPage from "./components/cartPage/CartPage.jsx";
 import { useState } from "react";
 import ScrollTop from "./components/scrollTop/ScrollTop.jsx";
+import Checkout from "./pages/checkout/Checkout.jsx";
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -26,6 +27,7 @@ function App() {
             }
           />
           <Route path="/" element={<Home />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<PageNotFount />} />
         </Route>
       </Routes>

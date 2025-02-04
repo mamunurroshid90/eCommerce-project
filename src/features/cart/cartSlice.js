@@ -18,7 +18,7 @@ const cartSlice = createSlice({
         existingItem.count += count; // Update count if the product already exists in the cart
       } else {
         state.items.push({ ...product, count }); // Add new product with count
-        console.log({ ...product, count });
+        // console.log({ ...product, count });
       }
     },
     removeFromCart: (state, action) => {

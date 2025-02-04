@@ -7,7 +7,7 @@ import { MdDeleteForever } from "react-icons/md";
 
 const CartPage = ({ onClose }) => {
   const cartItems = useSelector((state) => state.cart.items);
-  console.log("cart items", cartItems);
+  // console.log("cart items", cartItems);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -37,10 +37,6 @@ const CartPage = ({ onClose }) => {
 
   const clearProductCart = () => {
     dispatch(clearCart());
-  };
-
-  const closeCart = () => {
-    navigate(-1); // Go back to the previous page
   };
 
   // Reference to the cart sidebar
@@ -174,7 +170,10 @@ const CartPage = ({ onClose }) => {
               </div>
             </div>
             <div className=" w-full bg-primaryColor py-2 flex justify-center rounded">
-              <button className=" text-base font-semibold text-white">
+              <button
+                onClick={() => navigate("/checkout")}
+                className=" text-base font-semibold text-white"
+              >
                 Checkout
               </button>
             </div>

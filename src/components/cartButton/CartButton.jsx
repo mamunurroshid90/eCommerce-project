@@ -1,15 +1,9 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { MdShoppingBasket } from "react-icons/md";
-import CartPage from "../cartPage/CartPage";
 
 const CartButton = ({ toggleCart }) => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const cartItems = useSelector((state) => state.cart.items);
-
-  // const toggleCart = () => {
-  //   setIsCartOpen(!isCartOpen);
-  // };
 
   return (
     <>
@@ -29,7 +23,6 @@ const CartButton = ({ toggleCart }) => {
           )}
         </div>
       </div>
-      {/* {isCartOpen && <CartPage onClose={toggleCart} />} */}
     </>
   );
 };

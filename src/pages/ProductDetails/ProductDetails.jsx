@@ -16,7 +16,6 @@ const ProductDetails = ({ isCartOpen, toggleCart }) => {
 
   const { id } = useParams();
   const product = products.find((pItem) => pItem.id === parseInt(id));
-  console.log(product);
   const [productCount, setProductCount] = useState(1);
 
   const handleAddToCart = () => {
