@@ -30,5 +30,27 @@ const cartSlice = createSlice({
   },
 });
 
+// selectors
+
+export const selectCartItems = (state) => state.cart.items;
+
+export const selectSubTotal = (state) =>
+  state.cart.items.reduce(
+    (total, item) => total + item.newPrice * item.count,
+    0
+  );
+
+export const selectTotal = (state) => {
+  const subTotal = selectSubTotal(state);
+  const tax = subTotal * 0.1; // Example of tax 10%
+  const shipping = 10; // Example shipping cost
+  return subTotal + tax + shipping;
+};
+
+export const selectItemTotal = (state, itemId) => {
+  const item = state.cart.items.find((item) => item.id === itemId);
+  return item ? item.newPrice * item.count : 0;
+};
+
 export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

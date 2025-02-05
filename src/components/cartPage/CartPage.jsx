@@ -1,40 +1,24 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RxCross2, RxCrossCircled } from "react-icons/rx";
-import { clearCart, removeFromCart } from "../../features/cart/cartSlice";
+import {
+  clearCart,
+  removeFromCart,
+  selectCartItems,
+  selectItemTotal,
+  selectSubTotal,
+  selectTotal,
+} from "../../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 import { MdDeleteForever } from "react-icons/md";
-import {
-  calculateItemTotal,
-  calculateSubtotal,
-  calculateTotal,
-} from "../../utils/calculations";
 
 const CartPage = ({ onClose }) => {
-  const cartItems = useSelector((state) => state.cart.items);
+  const cartItems = useSelector(selectCartItems);
+  const subTotal = useSelector(selectSubTotal);
+  const total = useSelector(selectTotal);
   // console.log("cart items", cartItems);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  // const calculateSubtotal = () => {
-  //   return cartItems.reduce(
-  //     (total, item) => total + item.newPrice * item.count,
-  //     0
-  //   );
-  // };
-
-  // // Calculate Total (including tax and shipping)
-  // const calculateTotal = () => {
-  //   const subtotal = calculateSubtotal();
-  //   const tax = subtotal * 0.1; // Example tax (10%)
-  //   const shipping = 10; // Example shipping cost
-  //   return subtotal + tax + shipping;
-  // };
-
-  // // Calculate total for a single item
-  // const calculateItemTotal = (item) => {
-  //   return item.newPrice * item.count;
-  // };
 
   const removeProductFromCart = (id) => {
     dispatch(removeFromCart(id));
@@ -124,7 +108,12 @@ const CartPage = ({ onClose }) => {
                             <span> x </span>
                             <span>{item.count}</span>
                             <span> = </span>
-                            <span>${calculateItemTotal(item).toFixed(2)}</span>
+                            <span>
+                              $
+                              {useSelector((state) =>
+                                selectItemTotal(state, item.id)
+                              ).toFixed(2)}
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -148,15 +137,15 @@ const CartPage = ({ onClose }) => {
                   Subtotal
                 </div>
                 <div className=" w-1/2 text-end text-xl font-bold">
-                  ${calculateSubtotal(cartItems).toFixed(2)}
+                  ${subTotal.toFixed(2)}
                 </div>
               </div>
               <div className=" flex items-center justify-between border-b py-2">
                 <div className="text-xl text-[#4e4e4e] text-end w-1/2">
-                  Tax (10%){" "}
+                  Tax (10%)
                 </div>
                 <div className=" w-1/2 text-end text-xl font-bold">
-                  ${(calculateSubtotal(cartItems) * 0.1).toFixed(2)}
+                  ${(subTotal * 0.1).toFixed(2)}
                 </div>
               </div>
               <div className=" flex items-center justify-between border-b py-2">
@@ -170,12 +159,15 @@ const CartPage = ({ onClose }) => {
                   Total
                 </div>
                 <div className=" w-1/2 text-end text-xl font-bold">
-                  ${calculateTotal(cartItems).toFixed(2)}
+                  ${total.toFixed(2)}
                 </div>
               </div>
             </div>
             <div
-              onClick={() => navigate("/checkout")}
+              onClick={() => {
+                if (onClose) onClose(); // Call the onClose function if it exists
+                navigate("/checkout");
+              }}
               className=" w-full bg-primaryColor py-2 flex justify-center rounded"
             >
               <button className=" text-base font-semibold text-white">

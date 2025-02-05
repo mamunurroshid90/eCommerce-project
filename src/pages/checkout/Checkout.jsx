@@ -1,10 +1,21 @@
 import React from "react";
 import { useFormik } from "formik";
 import checkoutValidationSchema from "../../validationSchema";
+import { useSelector } from "react-redux";
+import {
+  selectCartItems,
+  selectItemTotal,
+  selectSubTotal,
+  selectTotal,
+} from "../../features/cart/cartSlice";
 
 const Checkout = () => {
   const [paymentOption, setPaymentOption] = React.useState("payment1");
   const [deliveryOption, setDeliveryOption] = React.useState("delivery1");
+  const cartItems = useSelector(selectCartItems);
+  console.log(cartItems);
+  const subTotal = useSelector(selectSubTotal);
+  const total = useSelector(selectTotal);
 
   // Formik hook
   const formik = useFormik({
@@ -404,29 +415,37 @@ const Checkout = () => {
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-gray-200">
-                        <tr className="block md:table-row border rounded-md md:border-none md:rounded-none p-4 md:p-0 shadow-sm md:shadow-none bg-white">
-                          <td className="block md:table-cell px-4 py-3 font-medium">
-                            <span className="md:hidden font-semibold">
-                              Product Name:
-                            </span>
-                            Lenovo IdeaCentre AIO 3 24IAP7 Core i5 13th Gen
-                            23.8" All-in-One Desktop PC
-                          </td>
-                          <td className="block md:table-cell px-4 py-3 font-semibold">
-                            <span className="md:hidden font-semibold">
-                              Price:
-                            </span>
-                            95,000৳ x 1
-                          </td>
-                          <td className="block md:table-cell px-4 py-3 font-semibold">
-                            <span className="md:hidden font-semibold">
-                              Total:
-                            </span>
-                            95,000৳
-                          </td>
-                        </tr>
-                      </tbody>
+                      {cartItems.map((item) => (
+                        <tbody className="divide-y divide-gray-200">
+                          <tr className="block md:table-row border rounded-md md:border-none md:rounded-none p-4 md:p-0 shadow-sm md:shadow-none bg-white">
+                            <td className="block md:table-cell px-4 py-3 font-medium">
+                              <span className="md:hidden font-semibold">
+                                Product Name:
+                              </span>
+                              <p>{item.title}</p>
+                            </td>
+                            <td className="block md:table-cell px-4 py-3 font-semibold">
+                              <span className="md:hidden font-semibold">
+                                Price:
+                              </span>
+                              <span>${item.newPrice}</span>
+                              <span> x </span>
+                              <span>{item.count}</span>
+                            </td>
+                            <td className="block md:table-cell px-4 py-3 font-semibold">
+                              <span className="md:hidden font-semibold">
+                                Total:
+                              </span>
+                              <span>
+                                $
+                                {useSelector((state) =>
+                                  selectItemTotal(state, item.id)
+                                ).toFixed(2)}
+                              </span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      ))}
                     </table>
                   </div>
                 </div>
