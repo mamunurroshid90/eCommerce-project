@@ -425,7 +425,7 @@ const Checkout = () => {
                               <p>{item.title}</p>
                             </td>
                             <td className="block md:table-cell px-4 py-3 font-semibold">
-                              <span className="md:hidden font-semibold">
+                              <span className="md:hidden font-semibold pr-1">
                                 Price:
                               </span>
                               <span>${item.newPrice}</span>
@@ -433,7 +433,7 @@ const Checkout = () => {
                               <span>{item.count}</span>
                             </td>
                             <td className="block md:table-cell px-4 py-3 font-semibold">
-                              <span className="md:hidden font-semibold">
+                              <span className="md:hidden font-semibold pr-1">
                                 Total:
                               </span>
                               <span>
@@ -459,15 +459,23 @@ const Checkout = () => {
                             Sub-Total:
                           </td>
                           <td className=" py-2 text-base font-bold text-primaryColor">
-                            215,000৳
+                            {subTotal.toFixed(2)}
                           </td>
                         </tr>
                         <tr className=" py-1 px-2 border-b border-[#ddd]">
                           <td className=" text-base font-bold pr-10 py-2">
-                            Home Delivery:
+                            Tax (10%):
                           </td>
                           <td className=" py-2 text-base font-bold text-primaryColor">
-                            60৳
+                            ${(subTotal * 0.1).toFixed(2)}
+                          </td>
+                        </tr>
+                        <tr className=" py-1 px-2 border-b border-[#ddd]">
+                          <td className=" text-base font-bold pr-10 py-2">
+                            Shipping:
+                          </td>
+                          <td className=" py-2 text-base font-bold text-primaryColor">
+                            $10
                           </td>
                         </tr>
                         <tr className=" py-1 px-2 border-b border-[#ddd]">
@@ -475,7 +483,7 @@ const Checkout = () => {
                             Total:
                           </td>
                           <td className=" py-2 text-base font-bold text-primaryColor">
-                            215,000৳
+                            ${total.toFixed(2)}
                           </td>
                         </tr>
                       </tbody>
